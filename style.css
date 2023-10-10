@@ -17,9 +17,11 @@ footer {
     border-radius: 0;
 }
 
-.jumbotron {
-    background: linear-gradient(to right, rgb(80, 190, 245),rgb(250, 229, 123), pink);
+.cabecera {
+    background: linear-gradient(to right, rgb(196, 160, 41),rgb(255, 0, 140), rgb(111, 0, 255));
     font-family: fantasy;
+    font-size: 300px;
+    width: auto 0;
 }
 
 h3{
