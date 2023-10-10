@@ -16,3 +16,13 @@ footer {
     margin-bottom: 0;
     border-radius: 0;
 }
+
+.jumbotron {
+    background: linear-gradient(to right, rgb(80, 190, 245),rgb(250, 229, 123), pink);
+    font-family: fantasy;
+}
+
+h3{
+font-weight: bold;
+}
+
