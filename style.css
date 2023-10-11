@@ -1,13 +1,22 @@
+body{
+    background-color: black;
+}
 p {
     font-weight: bold;
     color:black;
-    font-size: 20px;
+    font-size: 5vw;
     font-style: italic;
+}
+
+h3{
+    font-size: 4vw;
+    font-weight: bold;
+    color: white;
 }
 
 footer {
     background-color: #f2f2f2;
-    padding: 25px;
+    padding: 15px;
 }
 
 .navbar {
@@ -33,18 +42,31 @@ footer {
 }
 
 
-h3{
-    font-size: 3vw;
-    font-weight: bold;
+
+.day{
+    background-color: white;
+    padding-top: 3px;
 }
 
-.cantante img {
-   width: 25vw; 
+.day p {
+    font-size: 4vw;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center
+}
+
+.cantante img { 
+   width: 100%; 
    height: auto;
-   padding: 10px;
+   padding: 5px;
 }
 
 .cantante p {
     font-size: 2vw;
     font-family:Georgia, 'Times New Roman', Times, serif;
+    color: white;
+}
+.cantante h3{
+    font-size: 2.5vw;
+    font-weight: bold;
+    color: rgb(171, 171, 171);
 }
