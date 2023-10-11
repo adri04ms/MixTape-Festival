@@ -2,3 +2,19 @@
     width: 300px;
     height: auto;
 }
+table {
+    margin: 30px;
+    padding: 60px;
+    border: black 2px solid;
+    background-color: rgb(110, 235, 237);
+  }
+  td{
+    border:black 2px solid;
+    padding:10px;
+  }
+
+  th{
+    border:black 2px solid;
+    padding:10px;
+    font-size: 16px;
+  }
