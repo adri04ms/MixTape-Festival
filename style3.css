@@ -1,0 +1,31 @@
+body {
+    background: linear-gradient(90deg, #1D1A39 , #451952 , #662549 , #AE445A , #e87d26a0, #E8BCB9);
+}
+
+.contenedor1 {
+    color:  white;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: ;
+}
+
+.pie{
+    color: white;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.contenedor2{
+    color: white;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+input{
+    width:36vw;
+    
+
+}
+
+.contenedor5{
+    color: white; 
+    font-family:cursive;
+    font-size: 64px;
+
+}
