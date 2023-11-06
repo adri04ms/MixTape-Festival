@@ -12,14 +12,14 @@
 </head>
 
 <body>
-    <br> 
+    <br>
     <br>
     <div class="container-fluid">
         <div class="contenedor5">
-                <ul class="nav nav-pills nav-stacked">
+            <ul class="text-center titulo ">
 
-                    <p> MIXTAPE FESTIVAL </p>
-            </div>
+                <p> MIXTAPE FESTIVAL </p>
+        </div>
         <div class="row content">
             <div class="contenedor1 col-sm-4 sidenav">
                 <h2>Nuevo elemento</h2>
@@ -42,42 +42,53 @@
                         <tr>
                             <td>NOMBRE </td>
                             <td><label for="name"></label>
-                                <input placeholder=" Introduce el nombre del cantante" type="text" id="name" name="user_name" />
+                                <input placeholder=" Introduce el nombre del cantante" type="text" id="name"
+                                    name="user_name" />
                         </tr>
 
                         </tr>
                         <tr>
-                            <td>EDAD </td>
+                            <td>DESCRIPCIÓN</td>
                             <td><label for="name"></label>
-                                <input placeholder=" Introduce la edad del cantante" type="text" id="age" name="age" />
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>CANCION </td>
-                            <td><label for="cancion"></label>
-                                <input placeholder=" Introduce canciones separadas con coma"  type="email" id="cancion" name="cancion" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>ESCENARIO </td>
-                            <td><label for="name"></label>
-                                <input placeholder=" Introduce el escenario en el que canta"type="text" id="escenario" name="escenario" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>GÉNERO </td>
-                            <td><label for="name"></label>
-                                <input placeholder=" Introduce el género musical" type="text" id="genero" name="genero" />
+                                <input placeholder=" Introduce la descripción del cantante" type="text" id="descripción"
+                                    name="descripción" />
                             </td>
                         </tr>
                         <tr>
                             <td>FOTO </td>
                             <td><label for="name"></label>
-                                <input placeholder=" Introduce la URL de la foto del cantante" type="url" id="name" name="user_name" />
+                                <input placeholder=" Introduce la URL de la foto del cantante" type="url" id="name"
+                                    name="user_name" />
                             </td>
                         </tr>
 
+                        <tr>
+                            <td>FECHA </td>
+                            <td><label for="fecha"></label>
+                                <input placeholder=" Día del concierto" type="date" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>HORA </td>
+                            <td><label for="hora"></label>
+                                <input placeholder=" Hora del concierto" type="time" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td> GÉNERO </td>
+                            <td><select>
+                                    <option value="Genero">Selecciona un género</option>
+                                    <option value="Pop">Pop</option>
+                                    <option value="Rock">Rock</option>
+                                    <option value="Indie">Indie</option>
+                                    <option value="Alternativo">Alternativo</option>
+                                    <option value="Hip Hop">Hip Hop</option>
+                                    <option value="Metal">Metal</option>
+                                    <option value="Jazz">Jazz</option>
+                                </select></td>
+                        </tr>
 
                     </table>
                 </form>
