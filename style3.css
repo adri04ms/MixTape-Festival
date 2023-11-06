@@ -1,31 +1,58 @@
 body {
-    background: linear-gradient(90deg, #1D1A39 , #451952 , #662549 , #AE445A , #e87d26a0, #E8BCB9);
+    background: rgb(1, 0, 1);
+    background: linear-gradient(90deg, rgba(1, 0, 1, 1) 0%, rgba(56, 9, 73, 1) 52%, rgba(49, 13, 119, 1) 80%, rgba(18, 3, 75, 1) 100%);
 }
 
 .contenedor1 {
-    color:  white;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: ;
 }
 
-.pie{
+.pie {
     color: white;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.contenedor2{
+.contenedor2 {
     color: white;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-input{
-    width:36vw;
-    
+
+input {
+    width: 36vw;
+
 
 }
 
-.contenedor5{
-    color: white; 
-    font-family:cursive;
+.contenedor5 {
+    color: black;
+    font-family: cursive;
     font-size: 64px;
+    background-color: white;
 
+
+}
+
+
+.titulo {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 64px;
+}
+
+.boton {
+    background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 2.5rem;
+    padding: 0 1.4rem;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
 }
