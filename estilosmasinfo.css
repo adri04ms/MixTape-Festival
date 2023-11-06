@@ -90,3 +90,12 @@ ol{
 .nueva-cancion{
   margin-left: 90px;
 }
+
+@media only screen and (min-width:768px) and (max-width: 991px) {
+  /* PANTALLA MEDIANA */
+}
+
+@media only screen and (max-width: 767px) {
+  /* PANTALLA PEQUEÑA */
+}
+
