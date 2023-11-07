@@ -92,10 +92,81 @@ ol{
 }
 
 @media only screen and (min-width:768px) and (max-width: 991px) {
-  /* PANTALLA MEDIANA */
+  .boton-masinfo {
+    margin: 5px 0; /* Agrega margen vertical para separar los botones */    }
+
+  .button{
+      font-size: 10px;
+  }
+
+  h1{
+      font-size: 30px;
+  }
+
+  h2{
+    font-size: 20px;
+  }
+
+  p{
+      font-size: 10px;
+    }
+  .contenedor-de-botones {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .boton-masinfo button {
+    margin-left:20px; 
+  }
+
+  .elementos{
+    margin-left: 40px;
+  }
+
+  .canciones{
+    margin-left: 20px;
+  }
+
+  .nueva-cancion{
+    margin-left: 160px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
-  /* PANTALLA PEQUEÑA */
+  .boton-masinfo {
+    margin: 5px 0; /* Agrega margen vertical para separar los botones */    }
+
+  .button{
+      font-size: 10px;
+  }
+
+  h1{
+      font-size: 30px;
+  }
+
+  h2{
+    font-size: 20px;
+  }
+
+  p{
+      font-size: 10px;
+    }
+  .contenedor-de-botones {
+    display: flex;
+    align-items: center;
+  }
+
+  .boton-masinfo button {
+    margin-left:0px; 
+  }
+
+  .canciones{
+    margin-left: 0px;
+  }
+
+  .nueva-cancion{
+    margin-left: 0px;
+  }
 }
 
