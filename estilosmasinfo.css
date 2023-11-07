@@ -1,6 +1,6 @@
 body{
   background: rgb(1,0,1);
-background: linear-gradient(90deg, rgba(1,0,1,1) 0%, rgba(56,9,73,1) 52%, rgba(49,13,119,1) 80%, rgba(18,3,75,1) 100%);
+  background: linear-gradient(90deg, rgba(1,0,1,1) 0%, rgba(56,9,73,1) 52%, rgba(49,13,119,1) 80%, rgba(18,3,75,1) 100%);
 }
 
 
@@ -101,10 +101,12 @@ ol{
 
 @media only screen and (min-width:768px) and (max-width: 991px) {
   .boton-masinfo {
-    margin: 5px 0; /* Agrega margen vertical para separar los botones */    }
+    margin: 5px 0;   
+  }
 
   .button{
-      font-size: 10px;
+   font-size: 10px;
+   padding: 15px 20px;
   }
 
   h1{
@@ -120,12 +122,15 @@ ol{
     }
   .contenedor-de-botones {
     display: flex;
-    flex-direction: column;
-    align-content: center;
+    align-items: center;
   }
 
   .boton-masinfo button {
-    margin-left:20px; 
+    margin-left:50px; 
+  }
+
+  .editar{
+    margin-left: 70px;
   }
 
   .elementos{
@@ -143,10 +148,12 @@ ol{
 
 @media only screen and (max-width: 767px) {
   .boton-masinfo {
-    margin: 5px 0; /* Agrega margen vertical para separar los botones */    }
+    margin: 5px 0;
+  }
 
   .button{
-      font-size: 10px;
+    font-size: 10px;
+    padding: 5px 10px;
   }
 
   h1{
