@@ -9,26 +9,6 @@ body{
     height: auto;
 }
 
-table {
-    margin: 30px;
-    padding: 60px;
-    border: black 2px solid;
-    background-color:rgb(194, 139, 231);
-    text-align: center;
-    color:black;
-  }
-
-  td{
-    border:black 2px solid;
-    padding:10px;
-  }
-
-  th{
-    border:black 2px solid;
-    padding:10px;
-    font-size: 15px;
-  }
-
   p{
     text-align: justify;
     text-justify: inter-word;
