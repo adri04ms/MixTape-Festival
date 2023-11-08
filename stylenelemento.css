@@ -1,30 +1,23 @@
-body {
+body {   /*Color del fondo con degradado*/
     background: rgb(1, 0, 1);
     background: linear-gradient(90deg, rgba(1, 0, 1, 1) 0%, rgba(56, 9, 73, 1) 52%, rgba(49, 13, 119, 1) 80%, rgba(18, 3, 75, 1) 100%);
 }
 
-.contenedor1 {
+.contenedor1 {    /*Estilo del div de la izquierda*/
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.pie {
+.contenedor2 {    /*Estilo del div de la derecha*/
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.contenedor2 {
-    color: white;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-input {
+input {   /*Tamaño de las cajas blancas del formulario*/
     width: 36vw;
-
-
 }
 
-.contenedor5 {
+.contenedor5 {  /*Estilo del contenedor del titulo*/
     color: black;
     font-family: cursive;
     font-size: 64px;
@@ -32,12 +25,12 @@ input {
     
 }
 
-.titulo {
+.titulo {    /*Estilo de las letras del Titulo*/
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 64px;
 }
 
-.boton {
+.boton {   /*Estilo de los botones*/
     background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
     border-radius: 8px;
     border-style: none;
@@ -54,14 +47,14 @@ input {
     text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) {     /*Condiciones para pantallas menores a 767px de ancho*/
     
 
-    .titulo {
+    .titulo {  /*Estilo de las letras del Titulo*/
         font-size: 32px;
     }
 
-    .tabla{
+    .tabla{   /*Tamaño de la tabla en el responsive*/
         size : 20vw;
     }
 
