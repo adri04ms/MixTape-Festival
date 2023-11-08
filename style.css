@@ -1,35 +1,35 @@
-body{
-    background-color: black;
+body{ /*COLOR DE FONFO DE PAGINA*/
+    background-color: black; 
 }
 
-h3{
+h3{ /*GENERO*/
     font-size: 4vw;
     font-weight: bold;
     color: white;
 }
 
-a {
+a { /*PARA QUE NO SE SUBRAYEN LOS ENLACES*/
     text-decoration: none;
   }
 
 
-footer {
+footer { /*PIE DE PAGINA*/
     background-color: #f2f2f2;
     padding: 15px;
 }
 
 
-.cabecera {
+.cabecera { /*FONDO CABECERA*/
     background: linear-gradient(to right, rgb(196, 160, 41),rgb(255, 0, 140), rgb(111, 0, 255));
 }
 
-.cabecera p{
+.cabecera p{ /*FORMATO CABECERA SUBTITULO*/
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 2.5vw;
 }
 
 
-.cabecera h1 {
+.cabecera h1 { /*FORMATO CABECERA TITULO*/
     font-family: fantasy;
     font-size: 8vw;
     color: white;
@@ -37,11 +37,11 @@ footer {
 
 
 
-.artistas{
+.artistas{ /*FONDO DE LA FILA DE ARTISTAS INVITADOS*/
     background-color: white;
 }
 
-.artistas p {
+.artistas p { /*FORMATO DE ARTISTAS INVITADOS*/
     font-weight: bold;
     font-size: 3.5vw;
     font-family: Arial, Helvetica, sans-serif;
@@ -49,141 +49,141 @@ footer {
     text-align: center
 }
 
-.cantante img { 
+.cantante img { /*TAMAÑO IMAGEN*/
    width: 100%; 
    height: auto;
    padding: 5px;
 }
 
-.cantante p {
+.cantante p { /*FORMATO NOMBRE CANTANTE*/
     font-size: 1.8vw;
     font-family:Georgia, 'Times New Roman', Times, serif;
     color: white;
 }
-.cantante h3{
+.cantante h3{ /*FORMATO GENERO CANTANTE*/
     font-size: 1.5vw;
     font-weight: bold;
     color: rgb(171, 171, 171);
     padding-bottom: 50px;
 }
-.mapa h4{
+.mapa h4{ /*FORMATO TEXTO MAPA*/
     font-size: 1.5vw;
     font-weight: bold;
     color: white;
 }
 
-.mapa p{
+.mapa p{ /*FORMATO TEXTO MAPA*/
     font-size: 2vw;
     font-weight: bold;
     color: white;
 }
 
-.btn {
+.btn { /*FORMATO BOTON NUEVO ELEMENTO*/
     background-color: #ffffff;
     color: #000000;
     font-family: fantasy;
     font-size: 2.5vw;
   }
 
-@media only screen and (max-width: 767px) {
-    .artistas p {
+@media only screen and (max-width: 767px) { /*CONDICIONES PARA PANTALLAS MENORES A 767PX DE ANCHO*/
+    .artistas p { /*FORMATO DE ARTISTAS INVITADOS*/
         font-weight: bold;
         font-size: 5vw;
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
     }
     
-    h3{
+    h3{ /*GENERO*/
         font-size: 5vw;
         font-weight: bold;
         color: white;
     }
-    .cabecera p{
+    .cabecera p{ /*FORMATO CABECERA SUBTITULO*/
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 3vw;
     }
     
-    .cabecera h1 {
+    .cabecera h1 { /*FORMATO CABECERA TITULO*/
         font-family: fantasy;
         font-size: 9vw;
         color: white;
     }
-    .cantante img { 
+    .cantante img { /*TAMAÑO IMAGEN*/
         width: 80%; 
         height: auto;
         padding: 5px;
      }
-     .cantante p {
+     .cantante p { /*FORMATO NOMBRE CANTANTE*/
         font-size: 4vw;
         font-family:Georgia, 'Times New Roman', Times, serif;
         color: white;
     }
-    .cantante h3{
+    .cantante h3{ /*FORMATO GENERO CANTANTE*/
         font-size: 3.5vw;
         font-weight: bold;
         color: rgb(171, 171, 171);
         padding-bottom: 40px;
     }
-    .mapa h4{
+    .mapa h4{ /*FORMATO TEXTO MAPA*/
         font-size: 2.5vw;
         font-weight: bold;
         color: white;
     }
     
-    .mapa p{
+    .mapa p{ /*FORMATO TEXTO MAPA*/
         font-size: 3vw;
         font-weight: bold;
         color: white;
     }
 }
 
-@media only screen and (min-width:768px) and (max-width: 991px) {
-    .artistas p {
+@media only screen and (min-width:768px) and (max-width: 991px) { /*CONDICIONES PARA PANTALLAS MAYORES A 767PX DE ANCHO Y MENORES A 991 DE ANCHO*/
+    .artistas p { /*FORMATO DE ARTISTAS INVITADOS*/
         font-weight: bold;
         font-size: 4vw;
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
     }
     
-    h3{
+    h3{ /*GENERO*/
         font-size: 5vw;
         font-weight: bold;
         color: white;
     }
-    .cabecera p{
+    .cabecera p{ /*FORMATO CABECERA SUBTITULO*/
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 3vw;
     }
     
-    .cabecera h1 {
+    .cabecera h1 { /*FORMATO CABECERA TITULO*/
         font-family: fantasy;
         font-size: 10vw;
         color: white;
     }
-    .cantante img { 
+    .cantante img { /*TAMAÑO IMAGEN*/
         width: 90%; 
         height: auto;
         padding: 5px;
      }
-     .cantante p {
+     .cantante p { /*FORMATO NOMBRE CANTANTE*/
         font-size: 3vw;
         font-family:Georgia, 'Times New Roman', Times, serif;
         color: white;
     }
-    .cantante h3{
+    .cantante h3{ /*FORMATO GENERO CANTANTE*/
         font-size: 2.5vw;
         font-weight: bold;
         color: rgb(171, 171, 171);
         padding-bottom: 40px;
     }
 
-    .mapa h4{
+    .mapa h4{ /*FORMATO TEXTO MAPA*/
         font-size: 2.5vw;
         font-weight: bold;
         color: white;
     }
     
-    .mapa p{
+    .mapa p{ /*FORMATO TEXTO MAPA*/
         font-size: 3vw;
         font-weight: bold;
         color: white;
