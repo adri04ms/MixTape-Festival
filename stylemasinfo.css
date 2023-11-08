@@ -1,0 +1,169 @@
+body{
+  background: rgb(1,0,1);
+  background: linear-gradient(90deg, rgba(1,0,1,1) 0%, rgba(56,9,73,1) 52%, rgba(49,13,119,1) 80%, rgba(18,3,75,1) 100%);
+}
+
+
+.izquierda img{
+    width: 300px;
+    height: auto;
+}
+
+  p{
+    text-align: justify;
+    text-justify: inter-word;
+    color:white;
+  }
+
+  h1{
+    text-align: left;
+    font-family: fantasy;
+    font-size: 50px;
+    background-color: white;
+  }
+
+  h2{
+    text-align: left;
+    font-family: fantasy;
+    font-size: 30px;
+    color:white;   
+  }
+
+  h5{
+    color:white;
+  }
+
+  .canciones{
+    margin-left: 10px;
+  }
+
+  .nombre{
+    font-weight: bold;
+  }
+
+  button{
+  background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 2.5rem;
+  padding: 0 1.4rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+}
+
+ol{
+  color:white;
+}
+
+.contenedor-de-botones {
+  display: flex;
+  align-items: center;
+}
+
+.boton-masinfo button {
+  margin-left:30px; 
+}
+
+.canciones{
+  margin-left: 35px;
+}
+
+.nueva-cancion{
+  margin-left: 90px;
+}
+
+@media only screen and (min-width:768px) and (max-width: 991px) {
+  .boton-masinfo {
+    margin: 5px 0;   
+  }
+
+  .button{
+   font-size: 10px;
+   padding: 15px 20px;
+  }
+
+  h1{
+      font-size: 30px;
+  }
+
+  h2{
+    font-size: 20px;
+  }
+
+  p{
+      font-size: 10px;
+    }
+  .contenedor-de-botones {
+    display: flex;
+    align-items: center;
+  }
+
+  .boton-masinfo button {
+    margin-left:50px; 
+  }
+
+  .editar{
+    margin-left: 70px;
+  }
+
+  .elementos{
+    margin-left: 80px;
+  }
+
+  .canciones{
+    margin-left: 20px;
+  }
+
+  .nueva-cancion{
+    margin-left: 160px;
+    margin-right: 35px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .boton-masinfo {
+    margin: 5px 0;
+  }
+
+  .button{
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  h1{
+      font-size: 30px;
+  }
+
+  h2{
+    font-size: 20px;
+  }
+
+  p{
+      font-size: 10px;
+    }
+  .contenedor-de-botones {
+    display: flex;
+    align-items: center;
+  }
+
+  .boton-masinfo button {
+    margin-left:0px; 
+  }
+
+  .canciones{
+    margin-left: 0px;
+  }
+
+  .nueva-cancion{
+    margin-left: 0px;
+    margin-right: 35px;
+  }
+}
+
