@@ -9,35 +9,38 @@ body{  /*Color de fondo*/
     height: auto;
 }
 
-  p{  /*Formato parrafos*/
-    text-align: justify;
-    text-justify: inter-word;
-    color:white;
-  }
+input { /*Tamaño de las cajas blancas del formulario*/
+  width: 36vw;
+}
 
-  h1{   /*Formato h1*/
-    text-align: left;
-    font-family: fantasy;
-    font-size: 50px;
-    background-color: white;
-  }
+p{  /*Formato parrafos*/
+  text-align: justify;
+  color:white;
+}
 
-  h2{    /*Formato h2*/
-    text-align: left;
-    font-family: fantasy;
-    font-size: 30px;
-    color:white;   
-  }
+h1{   /*Formato h1*/
+  text-align: left;
+  font-family: fantasy;
+  font-size: 50px;
+  background-color: white;
+}
 
-  .canciones{   /*Añade margen*/
-    margin-left: 10px;
-  }
+h2{    /*Formato h2*/
+  text-align: left;
+  font-family: fantasy;
+  font-size: 30px;
+  color:white;   
+}
 
-  .nombre{   /*Formato titulo canciones*/
-    font-weight: bold;
-  }
+.canciones{   /*Añade margen*/
+  margin-left: 10px;
+}
 
-  button{ /*Formato boton*/
+.nombre{   /*Formato titulo canciones*/
+  font-weight: bold;
+}
+
+button{ /*Formato boton*/
   background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
   border-radius: 8px;
   border-style: none;
@@ -55,7 +58,7 @@ body{  /*Color de fondo*/
 }
 
 ol{   /*Formato lista*/
-  color:white;
+color:white;
 }
 
 .contenedor-de-botones {   /*Disposicion botones*/
@@ -76,87 +79,87 @@ ol{   /*Formato lista*/
 }
 
 @media only screen and (min-width:768px) and (max-width: 991px) {   /*CONDICIONES PARA PANTALLAS MENORES A 767PX DE ANCHO*/
-  .boton-masinfo {   /*Margen boton*/
-    margin: 5px 0;   
-  }
+.boton-masinfo {   /*Margen boton*/
+  margin: 5px 0;   
+}
 
-  .button{   /*Disposicion botones*/
-   font-size: 10px;
-   padding: 15px 20px;
-  }
+.button{   /*Disposicion botones*/
+  font-size: 10px;
+  padding: 15px 20px;
+}
 
-  h1{   /*Formato h1*/
-      font-size: 30px;
-  }
+h1{   /*Formato h1*/
+    font-size: 30px;
+}
 
-  h2{   /*Formato h2*/
-    font-size: 20px;
-  }
+h2{   /*Formato h2*/
+  font-size: 20px;
+}
 
-  p{   /*Formato parrafo*/
-      font-size: 10px;
-    }
-  .contenedor-de-botones {   /*Disposicion contenedor de botones*/
-    display: flex;
-    align-items: center;
+p{   /*Formato parrafo*/
+  font-size: 10px;
   }
+.contenedor-de-botones {   /*Disposicion contenedor de botones*/
+  display: flex;
+  align-items: center;
+}
 
-  .boton-masinfo button {   /*Margen boton*/
-    margin-left:50px; 
-  }
+.boton-masinfo button {   /*Margen boton*/
+  margin-left:50px; 
+}
 
-  .editar{   /*Margen boton editar*/
-    margin-left: 70px;
-  }
+.editar{   /*Margen boton editar*/
+  margin-left: 70px;
+}
 
-  .elementos{   /*Margen boton volver*/
-    margin-left: 80px;
-  }
+.elementos{   /*Margen boton volver*/
+  margin-left: 80px;
+}
 
-  .canciones{   /*Margen canciones*/
-    margin-left: 20px;
-  }
+.canciones{   /*Margen canciones*/
+  margin-left: 20px;
+}
 
-  .nueva-cancion{   /*Margen formulario*/
-    margin-left: 160px;
-  }
+.nueva-cancion{   /*Margen formulario*/
+  margin-left: 160px;
+}
 }
 
 @media only screen and (max-width: 767px) {   /*CONDICIONES PARA PANTALLAS MAYORES A 767PX DE ANCHO Y MENORES A 991 DE ANCHO*/
-  .boton-masinfo {   /*Formato boton*/
-    margin: 5px 0;
-  }
+.boton-masinfo {   /*Formato boton*/
+  margin: 5px 0;
+}
 
-  .button{   /*Formato botones*/
-    font-size: 10px;
-    padding: 5px 10px;
-  }
+.button{   /*Formato botones*/
+  font-size: 10px;
+  padding: 5px 10px;
+}
 
-  h1{   /*Formato h1*/
-      font-size: 30px;
-  }
+h1{   /*Formato h1*/
+    font-size: 30px;
+}
 
-  h2{   /*Formato h2*/
-    font-size: 20px;
-  }
+h2{   /*Formato h2*/
+  font-size: 20px;
+}
 
-  p{   /*Formato parrafo*/
-      font-size: 10px;
-    }
-  .contenedor-de-botones {   /*Disposicion contenedor de botones*/
-    display: flex;
-    align-items: center;
+p{   /*Formato parrafo*/
+  font-size: 10px;
   }
+.contenedor-de-botones {   /*Disposicion contenedor de botones*/
+  display: flex;
+  align-items: center;
+}
 
-  .boton-masinfo button {   /*Margen boton*/
-    margin-left:0px; 
-  }
+.boton-masinfo button {   /*Margen boton*/
+  margin-left:0px; 
+}
 
-  .canciones{   /*Margen canciones*/
-    margin-left: 0px;
-  }
+.canciones{   /*Margen canciones*/
+  margin-left: 0px;
+}
 
-  .nueva-cancion{ /*Margen formulario*/
-    margin-left: 0px;
-  }
+.nueva-cancion{ /*Margen formulario*/
+  margin-left: 0px;
+}
 }
