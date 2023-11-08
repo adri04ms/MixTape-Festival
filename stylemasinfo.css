@@ -1,47 +1,43 @@
-body{
+body{  /*Color de fondo*/
   background: rgb(1,0,1);
   background: linear-gradient(90deg, rgba(1,0,1,1) 0%, rgba(56,9,73,1) 52%, rgba(49,13,119,1) 80%, rgba(18,3,75,1) 100%);
 }
 
 
-.izquierda img{
+.izquierda img{  /*Tamaño imagen*/
     width: 300px;
     height: auto;
 }
 
-  p{
+  p{  /*Formato parrafos*/
     text-align: justify;
     text-justify: inter-word;
     color:white;
   }
 
-  h1{
+  h1{   /*Formato h1*/
     text-align: left;
     font-family: fantasy;
     font-size: 50px;
     background-color: white;
   }
 
-  h2{
+  h2{    /*Formato h2*/
     text-align: left;
     font-family: fantasy;
     font-size: 30px;
     color:white;   
   }
 
-  h5{
-    color:white;
-  }
-
-  .canciones{
+  .canciones{   /*Añade margen*/
     margin-left: 10px;
   }
 
-  .nombre{
+  .nombre{   /*Formato titulo canciones*/
     font-weight: bold;
   }
 
-  button{
+  button{ /*Formato boton*/
   background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
   border-radius: 8px;
   border-style: none;
@@ -58,112 +54,109 @@ body{
   text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
 }
 
-ol{
+ol{   /*Formato lista*/
   color:white;
 }
 
-.contenedor-de-botones {
+.contenedor-de-botones {   /*Disposicion botones*/
   display: flex;
   align-items: center;
 }
 
-.boton-masinfo button {
+.boton-masinfo button {   /*Margen boton*/
   margin-left:30px; 
 }
 
-.canciones{
+.canciones{   /*Margen lista de canciones*/
   margin-left: 35px;
 }
 
-.nueva-cancion{
+.nueva-cancion{   /*Margen formulario*/
   margin-left: 90px;
 }
 
-@media only screen and (min-width:768px) and (max-width: 991px) {
-  .boton-masinfo {
+@media only screen and (min-width:768px) and (max-width: 991px) {   /*CONDICIONES PARA PANTALLAS MENORES A 767PX DE ANCHO*/
+  .boton-masinfo {   /*Margen boton*/
     margin: 5px 0;   
   }
 
-  .button{
+  .button{   /*Disposicion botones*/
    font-size: 10px;
    padding: 15px 20px;
   }
 
-  h1{
+  h1{   /*Formato h1*/
       font-size: 30px;
   }
 
-  h2{
+  h2{   /*Formato h2*/
     font-size: 20px;
   }
 
-  p{
+  p{   /*Formato parrafo*/
       font-size: 10px;
     }
-  .contenedor-de-botones {
+  .contenedor-de-botones {   /*Disposicion contenedor de botones*/
     display: flex;
     align-items: center;
   }
 
-  .boton-masinfo button {
+  .boton-masinfo button {   /*Margen boton*/
     margin-left:50px; 
   }
 
-  .editar{
+  .editar{   /*Margen boton editar*/
     margin-left: 70px;
   }
 
-  .elementos{
+  .elementos{   /*Margen boton volver*/
     margin-left: 80px;
   }
 
-  .canciones{
+  .canciones{   /*Margen canciones*/
     margin-left: 20px;
   }
 
-  .nueva-cancion{
+  .nueva-cancion{   /*Margen formulario*/
     margin-left: 160px;
-    margin-right: 35px;
   }
 }
 
-@media only screen and (max-width: 767px) {
-  .boton-masinfo {
+@media only screen and (max-width: 767px) {   /*CONDICIONES PARA PANTALLAS MAYORES A 767PX DE ANCHO Y MENORES A 991 DE ANCHO*/
+  .boton-masinfo {   /*Formato boton*/
     margin: 5px 0;
   }
 
-  .button{
+  .button{   /*Formato botones*/
     font-size: 10px;
     padding: 5px 10px;
   }
 
-  h1{
+  h1{   /*Formato h1*/
       font-size: 30px;
   }
 
-  h2{
+  h2{   /*Formato h2*/
     font-size: 20px;
   }
 
-  p{
+  p{   /*Formato parrafo*/
       font-size: 10px;
     }
-  .contenedor-de-botones {
+  .contenedor-de-botones {   /*Disposicion contenedor de botones*/
     display: flex;
     align-items: center;
   }
 
-  .boton-masinfo button {
+  .boton-masinfo button {   /*Margen boton*/
     margin-left:0px; 
   }
 
-  .canciones{
+  .canciones{   /*Margen canciones*/
     margin-left: 0px;
   }
 
-  .nueva-cancion{
+  .nueva-cancion{ /*Margen formulario*/
     margin-left: 0px;
-    margin-right: 35px;
   }
 }
-
