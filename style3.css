@@ -29,10 +29,8 @@ input {
     font-family: cursive;
     font-size: 64px;
     background-color: white;
-
-
+    
 }
-
 
 .titulo {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -54,4 +52,19 @@ input {
     padding: 0 1.4rem;
     text-align: center;
     text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+}
+
+@media only screen and (max-width: 767px) {
+    
+
+    .titulo {
+        font-size: 32px;
+    }
+
+    .tabla{
+        size : 20vw;
+    }
+
+
+
 }
