@@ -14,7 +14,7 @@ class autor{
         }
 }
 
-let autores = [new autor('Bad Bunny', 'FotosArtistas/Bad Bunny.jpg', 'TRAP LATINO'),new autor('Bad Bunny', 'FotosArtistas/Bad Bunny.jpg', 'TRAP LATINO')];
+let autores = [new autor('Bad Bunny', 'FotosArtistas/Bad Bunny.jpg', 'TRAP LATINO'),new autor('Bad Bunny', 'FotosArtistas/Bad Bunny.jpg', 'TRAP LATINO'),new autor('Bad Bunny', 'FotosArtistas/Bad Bunny.jpg', 'TRAP LATINO')];
 
 
 let contenedor = document.getElementById("autor");
@@ -26,20 +26,22 @@ for (let i = 0; i < autores.length; i++) {
 
 function addAutorToDOM(autor, i) {
 let div = document.createElement("div");
-div.id = "autorDiv";
+div.classList = "cantante col-12 col-md-6 col-lg-4";
 
 let nombreElement = document.createElement("p");
 nombreElement.textContent = autores[i].nombre;
-nombreElement.href = "masinfo.html";
 
 
 let imagenElement = document.createElement("img");
-imagenElement.src = "FotosArtistas/Bad Bunny.jpg";
-imagenElement.alt = autores[i].imagen;
-imagenElement.href = "masinfo.html";
+imagenElement.src = autores[i].imagen;
+imagenElement.alt = autores[i].nombre;
+
+let generoElement = document.createElement("h3");
+generoElement.textContent = autores[i].genero;
 
 div.appendChild(nombreElement);
 div.appendChild(imagenElement);
+div.appendChild(generoElement);
 
 document.getElementById("divAutor").appendChild(div);
 
