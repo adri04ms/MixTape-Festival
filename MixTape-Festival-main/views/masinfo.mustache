@@ -4,28 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cantante - Detalles</title>
-    <link rel="stylesheet" href="masinfostyle.css">
+    <link rel="stylesheet" href="stylemasinfo.css">
 </head>
 <body>
 
-    <h1 id="nombreCantante">Nombre del Cantante</h1>
-    <img id="imagenCantante" src="" alt="Imagen del Cantante">
-    <p id="generoCantante"></p>
-    <p id="descripcionCantante"></p>
-    <p id="fechaHoraCantante"></p>
-    <ul id="cancionesCantante"></ul>
-    <button onclick="editarCantante()">Editar</button>
-    <button onclick="guardarCambios()">Guardar</button>
-    <button onclick="borrarCantante()">Borrar</button>
+    <h1 id="nombre">Nombre del Cantante</h1>
+    <img id="imagen" src="" alt="Imagen del Cantante">
+    <p id="genero"></p>
+    <p id="descripcion"></p>
+    <p id="fechaHora"></p>
+    <ul id="canciones"></ul>
+    <button onclick="editar()">Editar</button>
+    <button onclick="guardar()">Guardar</button>
+    <button onclick="borrar()">Borrar</button>
     <form id="formNuevaCancion">
-        <label for="nombreCancion">Nombre de la canción:</label>
-        <input type="text" id="nombreCancion" required>
-        <label for="duracionCancion">Duración:</label>
-        <input type="text" id="duracionCancion" required>
-        <label for="anoLanzamientoCancion">Año de lanzamiento:</label>
-        <input type="text" id="anoLanzamientoCancion" required>
-        <label for="colaboradorCancion">Colaborador:</label>
-        <input type="text" id="colaboradorCancion" required>
+        <label for="nombre">Nombre de la canción:</label>
+        <input type="text" id="nombre" required>
+        <label for="duracion">Duración:</label>
+        <input type="text" id="duracion" required>
+        <label for="Lanzamiento">Lanzamiento:</label>
+        <input type="text" id="Lanzamiento" required>
+        <label for="colaborador">Colaborador:</label>
+        <input type="text" id="colaborador" required>
         <button type="button" onclick="agregarCancion()">Añadir Canción</button>
     </form>
 
