@@ -1,7 +1,7 @@
 import express from 'express';
 import mustacheExpress from 'mustache-express'; 
-import { __dirname } from '../dirname';
-import {router} from '/../getRouter';
+import { __dirname } from './dirname';
+import {router} from './getRouter';
 import {fileURLToPath} from 'url';
 import {bodyParser} from 'body-parser'; 
 
@@ -21,11 +21,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //Sire para que la web pueda usar los archivos de la carpeta public
 app.use(express.static(join(__dirname + '/../public')));
 
+//Añado el router
 app.use('/', getRouter);
 
+//Directorio actual 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename); 
 
 
 //A PARTIR DE AQUI NO TIENE QUE IR EN ESTA PAGINA
+/*
 class autor{
     canciones = [];
 
@@ -75,3 +80,4 @@ div.appendChild(generoElement);
 document.getElementById("divAutor").appendChild(div);
 
 }
+*/
