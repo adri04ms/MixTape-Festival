@@ -1,10 +1,29 @@
-import {createServer} from 'http';
+import express from 'express'; 
+import * as servidor from './servidor'; 
 
-const httpServer = createServer((req, res)  => {
-        const elemento = servidor.getElemetno(0, 15); //de 0  a 15 son los que se muestran por primera vez en la pagina
-    res.render('index', { elemento: elemento});  //cargo el mustache 
+const router = express.Router(); 
+
+router.get('/', (req, res) => {
+    const elemento = servidor.getElemento(0, 15); 
+    res.render('index', {elemento: elemento});
+}); 
+
+router.get('/nuevo', (req, res) => {
+    res.render('nuevoelemento'); 
+}); 
+
+router.post('/nuevoelemento', (req, res) => {
+    console.log(req.bady); 
+    let {nombre, descripcion, genero, fecha, hora, imagen} = req.body; 
+    servidor.elemento({nombre, genero, imagen}); 
+    res.render('Guardado')
 });
 
-httpServer.listen(3000); 
+//Sirve para obtener un cantante específico por su ID
+router.get('/masInfo/:id', (req, res) => {
+    let elemento = servidor.elemento(req.params.id);
+    console.log(elemento); 
+    res.render('masinfo', {elemento});
+});
 
-
+export default router; 
