@@ -1,0 +1,83 @@
+<!--el archivo html ahora se llama mustache, es lo mismo  -->
+<!-- aqui voy a tener la plantilla del cantante y cuando renderice se me pone la información especifica de ese cantante en la plantilla -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>MIXTAPE FESTIVAL</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"> </script>
+    <link rel="stylesheet" href="styleprincipal.css">
+</head>
+
+<body>
+    <section>
+        <div class="cabecera">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>MIXTAPE FESTIVAL</h1> <!--TITULO-->
+                        <p>The best festival of your entire life</p>  <!--SUBTITULO-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <section>
+        <div class="container text-center">
+            <div class="row">
+                <div class="artistas col-12">
+                    <p>ARTISTAS INVITADOS</p> <!--PRIMERA FILA DEL GRID-->
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                {{#artistas}}
+                <div class="cantante col-12 col-md-6 col-lg-3"> <!--CADA ARTISTA OCUPA 3 COLUMNAS (PANTALLA GRANDE), 6 COLUMNAS (PANTALLA MEDIANA), 12 COLUMNAS (PANTALLA PEQUEÑA)-->
+                    <a href="masinfo.html">
+                        <p>{{nombre}}</p>
+                    </a>
+                    <a href="masinfo.html"><img src="{{imagen}}" alt="{{nombre}}"></a>
+                    <h3>{{genero}}</h3>
+                </div>
+                {{/artistas}}
+            </div>
+        </div>
+    </section>
+     <section>
+        <div class="boton-nuevoelemento">
+            <a href="nuevoelemento.html"><button class="btn btn-primary d-grid gap-2 col-6 mx-auto" type="button">NUEVO ELEMENTO</button></a> <!--BOTON NUEVO ELEMENTO-->
+        </div>
+    </section>
+    <br>
+    <section>
+        <div class="container mapa"> <!--CONTENEDOR DEL MAPA-->
+            <div class="row">
+                <div class="col text-center">
+                    <p>Albacete, canta y vete</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <h4>Os dejamos la ubicacion del Festival</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center"> <!--MAPA-->
+                    <iframe class="map-responsive" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3100.3810900544145!2d-1.796441424350917!3d39.00661944025275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd66f502a25da35f%3A0x834de9dca87b708e!2sCircuito%20de%20Albacete%20-%20Albacete%20Motor%20Speedway!5e0!3m2!1ses!2ses!4v1697320861144!5m2!1ses!2ses" width="75%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br>
+    <footer class="container-fluid text-center">
+        <h5>Albacete es internationally que no os engañen</h5> <!--PIE DE PAGINA-->
+    </footer>
+
+</body>
+
+</html>
