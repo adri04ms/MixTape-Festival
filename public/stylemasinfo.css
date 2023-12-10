@@ -1,5 +1,4 @@
-body{  /*Color de fondo*/
-  background: rgb(1,0,1);
+body{
   background: linear-gradient(90deg, rgba(1,0,1,1) 0%, rgba(56,9,73,1) 52%, rgba(49,13,119,1) 80%, rgba(18,3,75,1) 100%);
 }
 
