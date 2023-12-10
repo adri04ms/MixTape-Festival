@@ -16,22 +16,22 @@
     <div class="izquierda row">
       <h1>{{artista.nombre}}</h1>
       <div class="col-12 col-md-6 col-lg-4">
-        <div class="justify-content-center">
-          <img src="{{artista.imagen}}" alt="{{artista.nombre}}" width="500">
+        <div class="text-center align-items-center justify-content-center cantante">
+          <img src="{{artista.imagen}}" alt="{{artista.nombre}}">
         </div>
         <br>
       </div>
 
       <div class="col-12 col-md-6 col-lg-7">
-        <hr>
+        <br>
         <h2>{{artista.genero}}</h2><!--Atributo de elemento-->
         <p>{{artista.descripcion}}</p>
         <br>
         <h2>Actuacion durante el festival</h2><!--Atributo de elemento-->
         <p>{{artista.fecha}}</p>
         <p>{{artista.hora}}</p>
-        <hr>
       </div>
+      <br>
       <div class="col-6 col-md-3 col-lg-3 canciones"><!--Lista de sububelementos-->
         <h2>Canciones</h2><br>
         {{#artista.canciones}}

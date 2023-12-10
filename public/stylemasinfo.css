@@ -122,6 +122,11 @@ p{   /*Formato parrafo*/
 .nueva-cancion{   /*Margen formulario*/
   margin-left: 160px;
 }
+.cantante img { /*TAMAÑO IMAGEN*/
+  width: 100%; 
+  height: auto;
+  padding: 5px;
+}
 }
 
 @media only screen and (max-width: 767px) {   /*CONDICIONES PARA PANTALLAS MAYORES A 767PX DE ANCHO Y MENORES A 991 DE ANCHO*/
@@ -160,5 +165,11 @@ p{   /*Formato parrafo*/
 
 .nueva-cancion{ /*Margen formulario*/
   margin-left: 0px;
+}
+
+.cantante img { /*TAMAÑO IMAGEN*/
+  width: 80%; 
+  height: auto;
+  padding: 5px;
 }
 }
