@@ -7,12 +7,6 @@ router.get("/", (req, res) => {
   res.render("paginaweb",{artistas: servidor.getArtistas()});
 });
   
-  
-router.post("/nuevoelemento", (req, res) => {
-  let { nombre, imagen, genero } = req.body;
-  servidor.addArtista({ nombre, imagen, genero });
-  res.render("Guardado");
-}); 
 
 //Sirve para obtener un cantante específico por su ID
 router.get("/masInfo/:id", (req, res) => {
@@ -20,36 +14,23 @@ router.get("/masInfo/:id", (req, res) => {
   res.render("masinfo",{artista});
 }); 
 
-
-router.get("/masInfo/:id", (req, res) => {
-  // req lo que enviamos - res lo que express nos responde
-  let artista = servidor.getArtista(req.params.id); // 
-  res.render("masInfo", { artista }); // Renderizar la plantilla 'equipos' con el equipo obtenido
-});
  
 router.get("/nuevo", (req, res) => {
   // req lo que enviamos - res lo que express nos responde
   res.render("nuevoelemento");
 });  
  
-router.post("/NuevoElementoGuardado", (req, res) => {
-  let { nombre, imagen, genero, fecha, hora, descripcion, canciones } = req.body;
-  let cancion = [];
-  let id = teamService.addArtista({
-    nombre,
-    imagen, 
-    genero,
-    fecha, 
-    hora, 
-    descripcion, 
-    canciones 
-  }); 
 
-  let artista = teamService.getArtista(req.params.id); 
-  res.render("masinfo", { artista }); // Renderizar la plantilla 'equipos' 
- 
+router.post('/añadirnuevo', (req, res) => {
+  let { nombre, imagen, genero, fecha, hora, descripcion } = req.body;
+  servidor.addArtista({nombre, imagen, genero, fecha, hora, descripcion });
+  res.render('guardado');
 });
 
+router.get("/masInfo/:id/borrar", (req, res) => {
+  servidor.deleteArtista(req.params.id); 
+  res.redirect("/"); 
+});
  
 
 

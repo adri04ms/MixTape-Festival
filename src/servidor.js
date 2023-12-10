@@ -236,4 +236,9 @@ export function getArtista(id) {
     return artistas.get(id);
   }
 
+export function deleteArtista(id){ /* Borra un elemento del mapa a través de una id que le proporciono */
+  artistas.delete(id);
+}
+
+
 loadSampleData();  

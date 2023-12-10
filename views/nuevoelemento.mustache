@@ -33,30 +33,18 @@
             <div class="contenedor2 col-sm-7">
                 <h2><small>Nuevo cantante</small></h2>   <!-- Contenedor de la derecha con el formulario-->
 
-                <form
-                 class="formulario"
-                action="/NuevoElementoGuardado"
-                    method="post">
-                    <table class="default">
-
-                        <tr>
-                            <td>NOMBRE </td>   <!--Campos del formulario-->
-                            <td><label for="nombre"></label>
-                                <input placeholder=" Introduce el nombre del cantante" type="text" id="nombre" />
-                        </tr>
-
-                        </tr>
-                        <tr>
-                            <td>FOTO </td>
-                            <td><label for="imagen"></label>
-                                <input placeholder=" Introduce la URL de la foto del cantante" type="url" id="imagen"
-                                    />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> GÉNERO </td>   <!--Es un tipo especial de formulario en el que se selecciona-->
-                            <td>
-                                <select aria-label="Formulario" id="genero">
+                <form role="form" class="formulario" action="/añadirnuevo" method="post">
+                        <div>
+                            <label for="nombre">NOMBRE</label>
+                            <input placeholder=" Introduce el nombre del cantante" type="text" id="nombre" name="nombre" />
+                        </div>
+                        <div>
+                            <label for="imagen">IMAGEN</label>
+                            <input placeholder=" Introduce la URL de la foto del cantante" type="url" id="imagen" name="imagen"/>
+                        </div>
+                        <div>
+                            <label for="genero">GENERO</label>
+                            <select aria-label="Formulario" id="genero" name="genero">
                                     <option value="Genero">Selecciona un género</option>
                                     <option value="Pop español">Pop español</option>
                                     <option value="Pop">Pop</option>
@@ -70,40 +58,26 @@
                                     <option value="Jazz">Jazz</option>
                                     <option value="Trap latino">Trap latino</option>
                                 </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>FECHA </td>  <!--Es un tipo especial de formulario de la fecha-->
-                            <td><label for="fecha"></label>
-                                <input placeholder=" Día del concierto" type="date" id="fecha" />
-                            </td>
-                        </tr>
+                        </div>
+                        <div>
+                            <label for="fecha">FECHA</label>
+                            <input placeholder="Día del concierto" type="date" id="fecha" name="fecha"/>
+                        </div>
+                        <div>
+                            <label for="hora">HORA</label>
+                            <input placeholder=" Hora del concierto" type="time" id="hora" name="hora"/>
+                        </div>
+                        <div>
+                            <label for="descripcion">DESCRIPCION</label>
+                            <input placeholder=" Introduce la descripción del cantante" type="text" id="descripcion" name="descripcion"/>
+                        </div>
+                </form>
 
-                        <tr>
-                            <td>HORA </td>  <!--Es un tipo especial de formulario de la hora-->
-                            <td><label for="hora"></label>
-                                <input placeholder=" Hora del concierto" type="time" id="hora" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>DESCRIPCIÓN</td>
-                            <td><label for="descripcion"></label>
-                                <input placeholder=" Introduce la descripción del cantante" type="text" id="descripcion"
-                                     />
-                            </td>
-                        </tr>
-                    </table>
-              
-
-                <br>
-
-                <button class="boton">GUARDAR</button> 
-                </form> 
                 <br> 
-                 <!--Boton de guardar que no hace nada-->
-                <a href="/">
-                <button class="boton">CANCELAR</button>
-                </a> <!--Boton de cancelar que vuelve a la pagina principal-->
+                <a href="/"><button class="boton" type="submit" value="Save">GUARDAR</button></a>
+                <br>
+                <br>
+                <a href="/"><button class="boton">CANCELAR</button></a> <!--Boton de cancelar que vuelve a la pagina principal-->
             </div>
         </div>
     </div>
