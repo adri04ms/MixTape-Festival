@@ -34,7 +34,7 @@ router.get("/new", (req, res) => {
  
 router.post("/NuevoElementoGuardado", (req, res) => {
   let { nombre, imagen, genero, fecha, hora, descripcion, canciones } = req.body;
-  let canciones = [];
+  let cancion = [];
   let id = teamService.addArtista({
     nombre,
     imagen, 
