@@ -33,14 +33,14 @@
             <div class="contenedor2 col-sm-7">
                 <h2><small>Nuevo cantante</small></h2>   <!-- Contenedor de la derecha con el formulario-->
 
-                <form role="form" class="formulario" action="/añadirnuevo" method="post">
+                <form role="form" class="formulario" action="/newElemento" method="post">
                         <div>
                             <label for="nombre">NOMBRE</label>
-                            <input placeholder=" Introduce el nombre del cantante" type="text" id="nombre" name="nombre" />
+                            <input placeholder=" Introduce el nombre del cantante" type="text" id="nombre" name="nombre">
                         </div>
                         <div>
                             <label for="imagen">IMAGEN</label>
-                            <input placeholder=" Introduce la URL de la foto del cantante" type="url" id="imagen" name="imagen"/>
+                            <input placeholder=" Introduce la URL de la foto del cantante" type="url" id="imagen" name="imagen">
                         </div>
                         <div>
                             <label for="genero">GENERO</label>
@@ -61,23 +61,26 @@
                         </div>
                         <div>
                             <label for="fecha">FECHA</label>
-                            <input placeholder="Día del concierto" type="date" id="fecha" name="fecha"/>
+                            <input placeholder="Día del concierto" type="date" id="fecha" name="fecha">
                         </div>
                         <div>
                             <label for="hora">HORA</label>
-                            <input placeholder=" Hora del concierto" type="time" id="hora" name="hora"/>
+                            <input placeholder=" Hora del concierto" type="time" id="hora" name="hora">
                         </div>
                         <div>
                             <label for="descripcion">DESCRIPCION</label>
-                            <input placeholder=" Introduce la descripción del cantante" type="text" id="descripcion" name="descripcion"/>
+                            <input placeholder=" Introduce la descripción del cantante" type="text" id="descripcion" name="descripcion">
+                        </div>
+
+                        <div>
+                        <button class="boton" type="submit" value="Save" name="save">GUARDAR</button>   
                         </div>
                 </form>
-
-                <br> 
-                <a href="/"><button class="boton" type="submit" value="Save">GUARDAR</button></a>
+                <br><br>
+                <div>
+                    <a href="/"><button class="boton" name="cancel">CANCELAR</button></a> <!--Boton de cancelar que vuelve a la pagina principal-->
+                </div>
                 <br>
-                <br>
-                <a href="/"><button class="boton">CANCELAR</button></a> <!--Boton de cancelar que vuelve a la pagina principal-->
             </div>
         </div>
     </div>

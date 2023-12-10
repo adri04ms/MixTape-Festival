@@ -218,6 +218,13 @@ export function loadSampleData(){
         ] 
     
     });
+
+    addArtista({
+        nombre: 'TAYLOR SWIFT'
+    
+    });
+
+
 }
 
 export function addArtista(artista) {

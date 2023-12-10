@@ -21,10 +21,11 @@ router.get("/nuevo", (req, res) => {
 });  
  
 
-router.post('/añadirnuevo', (req, res) => {
+router.post("/newElemento", (req, res) => {
+
   let { nombre, imagen, genero, fecha, hora, descripcion } = req.body;
   servidor.addArtista({nombre, imagen, genero, fecha, hora, descripcion });
-  res.render('guardado');
+  res.redirect("/")
 });
 
 router.get("/masInfo/:id/borrar", (req, res) => {
