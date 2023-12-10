@@ -6,7 +6,7 @@ export function loadSampleData(){
 
     addArtista({
         nombre: 'BAD BUNNY',
-        imagen: 'https://media.glamour.mx/photos/6394a62ee1980a449b839492/1:1/w_1999,h_1999,c_limit/bad_bunny_concierto_problema_con_los_boletos.jpg',
+        imagen: 'https://rec-end.elnuevodia.com/images/tn/0/10/892/1200/473/618/2019/01/23/721a274eb5cb4f078abc21094c72cb95.jpg',
         genero: 'TRAP LATINO', 
         fecha:  '17/7/24',
         hora: '17:45',
@@ -42,7 +42,7 @@ export function loadSampleData(){
 
     addArtista({
         nombre: 'ESTOPA',
-        imagen: 'https://estaticos-cdn.prensaiberica.es/clip/0aa65c2e-d313-422a-8c8f-c66bb7a1c1b3_alta-libre-aspect-ratio_default_0.jpg',
+        imagen: 'https://cdn.notikumi.com/e/2023/04/22/1080/2023-4-22-concierto-tributo-a-estopa.jpg',
         genero: 'POP ESPAÑOL',
         fecha: '17/07/2024',  
         hora: '19:45',
@@ -114,7 +114,7 @@ export function loadSampleData(){
 
     addArtista({
         nombre: 'RAUW ALEJANDRO',
-        imagen: 'https://e00-marca.uecdn.es/assets/multimedia/imagenes/2023/09/18/16950188541968.jpg',
+        imagen: 'https://images.ecestaticos.com/55chEtTYR0Ecs90P5EaKNXcPC8M=/573x0:1689x1489/1440x1920/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F440%2Fa34%2F386%2F440a34386be33828eb24867fc7240705.jpg',
         genero: 'REGUETON',
         fecha: '18/07/2024',  
         hora: '17:30',
@@ -132,7 +132,7 @@ export function loadSampleData(){
 
     addArtista({
         nombre: 'SHAWN MENDES',
-        imagen: 'https://media.gq.com.mx/photos/6410bc4e4bd8a4658aae1716/1:1/w_2143,h_2143,c_limit/Shawn_Mendes_GQ_HYPE_COVER.jpg',
+        imagen: 'https://hips.hearstapps.com/hmg-prod/images/shawn-mendes-ckc-1557398943.jpg',
         genero: 'POP',
         fecha: '18/07/2024',  
         hora: '18:45',
@@ -167,7 +167,7 @@ export function loadSampleData(){
 
     addArtista({
         nombre: 'ONE DIRECTION',
-        imagen: 'https://www.usatoday.com/gcdn/presto/2020/07/22/USAT/f53b2770-3577-48f0-a663-a00c66074c53-AP_2012_Kids_Choice_Awards_Show.JPG?width=1200&disable=upscale&format=pjpg&auto=webp',
+        imagen: 'https://m.media-amazon.com/images/I/81A-XG0dcXL._AC_UF894,1000_QL80_.jpg',
         genero: 'POP',
         fecha: '18/07/2024',  
         hora: '21:45',
@@ -185,7 +185,7 @@ export function loadSampleData(){
 
     addArtista({
         nombre: 'QUEVEDO',
-        imagen: 'https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2022/09/08/16626294157265.jpg',
+        imagen: 'https://i.pinimg.com/736x/6f/80/e5/6f80e5cd99bf1fb94f64dc6796055d56.jpg',
         genero: 'REGUETON',
         fecha: '18/07/2024',  
         hora: '22:45',
@@ -203,7 +203,7 @@ export function loadSampleData(){
 
     addArtista({
         nombre: 'TAYLOR SWIFT',
-        imagen: 'https://www.billboard.com/wp-content/uploads/2023/03/taylor-swift-eras-tour-las-vegas-2023-billboard-1548.jpg?w=942&h=623&crop=1',
+        imagen: 'https://pyxis.nymag.com/v1/imgs/78d/600/9bacacbd254c30f24c6213ecb44edc0383-29-taylor-swift-acoustic.rvertical.w330.jpg',
         genero: 'POP',
         fecha: '18/07/2024',  
         hora: '00:45',

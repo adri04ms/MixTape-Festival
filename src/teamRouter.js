@@ -27,9 +27,9 @@ router.get("/masInfo/:id", (req, res) => {
   res.render("masInfo", { artista }); // Renderizar la plantilla 'equipos' con el equipo obtenido
 });
  
-router.get("/new", (req, res) => {
+router.get("/nuevo", (req, res) => {
   // req lo que enviamos - res lo que express nos responde
-  res.render("nuevo");
+  res.render("nuevoelemento");
 });  
  
 router.post("/NuevoElementoGuardado", (req, res) => {

@@ -50,8 +50,8 @@ footer { /*PIE DE PAGINA*/
 }
 
 .cantante img { /*TAMAÑO IMAGEN*/
-   width: 100%; 
-   height: auto;
+   width: 300px; 
+   height: 425px;
    padding: 5px;
 }
 
