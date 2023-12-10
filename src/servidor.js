@@ -226,6 +226,7 @@ export function addArtista(artista) {
     let id = nextId++;           
     artista.id = id.toString();
     artistas.set(artista.id, artista);
+    return artista.id;
   
 }
 
@@ -241,6 +242,18 @@ export function getArtista(id) {
 export function deleteArtista(id){ /* Borra un elemento del mapa a través de una id que le proporciono */
   artistas.delete(id);
 }
+
+export function editArtista(id, { nombre, imagen, genero, fecha, hora, descripcion }) {
+        const artistToUpdate = artistas.get(id);
+        artistToUpdate.nombre = nombre !== undefined ? nombre : artistToUpdate.nombre;
+        artistToUpdate.imagen = imagen !== undefined ? imagen : artistToUpdate.imagen;
+        artistToUpdate.genero = genero !== undefined ? genero : artistToUpdate.genero;
+        artistToUpdate.fecha = fecha !== undefined ? fecha : artistToUpdate.fecha;
+        artistToUpdate.hora = hora !== undefined ? hora : artistToUpdate.hora;
+        artistToUpdate.descripcion = descripcion !== undefined ? descripcion : artistToUpdate.descripcion;
+        artistas.set(id, artistToUpdate);
+    }
+
 
 
 loadSampleData();  

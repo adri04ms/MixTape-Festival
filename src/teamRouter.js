@@ -22,11 +22,23 @@ router.get("/nuevo", (req, res) => {
  
 
 router.post("/newElemento", (req, res) => {
-
   let { nombre, imagen, genero, fecha, hora, descripcion } = req.body;
-  servidor.addArtista({nombre, imagen, genero, fecha, hora, descripcion});
-  let artista = ({nombre, imagen, genero, fecha, hora, descripcion});
+  let artista = servidor.getArtista(servidor.addArtista({nombre, imagen, genero, fecha, hora, descripcion}));
   res.render("masinfo",{artista});
+});
+
+router.get("/editar/:id", (req, res) => {
+  let artista = servidor.getArtista(req.params.id);
+  res.render("editarelemento",{artista});
+}); 
+
+
+router.post("/update/:id", (req, res) => {
+  let { nombre, imagen, genero, fecha, hora, descripcion } = req.body;
+  let artista = ({nombre, imagen, genero, fecha, hora, descripcion});
+  servidor.editArtista(req.params.id,artista);
+  artista = servidor.getArtista(req.params.id);
+  res.render("masInfo",{artista});
 });
 
 router.get("/masInfo/:id/borrar", (req, res) => {
