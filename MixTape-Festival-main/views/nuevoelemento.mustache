@@ -33,49 +33,52 @@
             <div class="contenedor2 col-sm-7">
                 <h2><small>Nuevo cantante</small></h2>   <!-- Contenedor de la derecha con el formulario-->
 
-                <form action = "url_router">
+                <form
+                 class="formulario"
+                action="/NuevoElementoGuardado"
+                    method="post">
                     <table class="default">
 
                         <tr>
                             <td>NOMBRE </td>   <!--Campos del formulario-->
                             <td><label for="name"></label>
-                                <input placeholder=" Introduce el nombre del cantante" type="text" id="name"name="user_name" />
+                                <input placeholder=" Introduce el nombre del cantante" type="text" id="name" />
                         </tr>
 
                         </tr>
                         <tr>
                             <td>DESCRIPCIÓN</td>
-                            <td><label for="name"></label>
+                            <td><label for="descripción"></label>
                                 <input placeholder=" Introduce la descripción del cantante" type="text" id="descripción"
-                                    name="descripción" />
+                                     />
                             </td>
                         </tr>
                         <tr>
                             <td>FOTO </td>
-                            <td><label for="name"></label>
-                                <input placeholder=" Introduce la URL de la foto del cantante" type="url" id="name"
-                                    name="user_name" />
+                            <td><label for="foto"></label>
+                                <input placeholder=" Introduce la URL de la foto del cantante" type="url" id="foto"
+                                    />
                             </td>
                         </tr>
 
                         <tr>
                             <td>FECHA </td>  <!--Es un tipo especial de formulario de la fecha-->
                             <td><label for="fecha"></label>
-                                <input placeholder=" Día del concierto" type="date" />
+                                <input placeholder=" Día del concierto" type="date" id="fecha" />
                             </td>
                         </tr>
 
                         <tr>
                             <td>HORA </td>  <!--Es un tipo especial de formulario de la hora-->
                             <td><label for="hora"></label>
-                                <input placeholder=" Hora del concierto" type="time" />
+                                <input placeholder=" Hora del concierto" type="time" id="hora" />
                             </td>
                         </tr>
 
                         <tr>
                             <td> GÉNERO </td>   <!--Es un tipo especial de formulario en el que se selecciona-->
                             <td>
-                                <select aria-label="Formulario">
+                                <select aria-label="Formulario" id="genero">
                                     <option value="Genero">Selecciona un género</option>
                                     <option value="Pop español">Pop español</option>
                                     <option value="Pop">Pop</option>
@@ -93,13 +96,15 @@
                         </tr>
 
                     </table>
-                    <input type="submit" value="enviar">
-                </form>
+              
 
                 <br>
 
-                <button class="boton" type="submit">GUARDAR</button>   <!--Boton de guardar que no hace nada-->
-                <a href="paginaweb.html"><button class="boton" type="submit">CANCELAR</button></a>  <!--Boton de cancelar que vuelve a la pagina principal-->
+                <button class="boton">GUARDAR</button>  </form>  
+                 <!--Boton de guardar que no hace nada-->
+                    <a href="/">
+                    <button class="boton">Cancelar</button>
+                    </a> <!--Boton de cancelar que vuelve a la pagina principal-->
             </div>
         </div>
     </div>

@@ -1,30 +1,57 @@
-import express from "express";
-/* 
-import * as servidor from "./servidor"; */ /* hasta que noo definais funciones y cosas dentro de servidor no lo descoomenteis porque node intenta importar aquí las funciones y comoo no hay nada da error */
+import express from 'express';
+import * as servidor from './servidor.js';
 
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  /*  const elemento = servidor.getElemento(0, 15);*/ /* HAstas que no defiinais en servidor la funcio getElemento no la useis pq os dará error al inciar el servidor */
-  res.render("paginaweb"/* falta lo del elemenot, pero lo teneis que definir primero para lo de la pila */);
+  res.render("paginaweb",{artistas: servidor.getArtistas()});
 });
-
-router.get("/nuevo", (req, res) => {
-  res.render("nuevoelemento");
-});
-
+  
+  
 router.post("/nuevoelemento", (req, res) => {
-  console.log(req.bady);
-  let { nombre, descripcion, genero, fecha, hora, imagen } = req.body;
-  /*   servidor.elemento({ nombre, genero, imagen }); */
+  let { nombre, imagen, genero } = req.body;
+  servidor.addArtista({ nombre, imagen, genero });
   res.render("Guardado");
-});
+}); 
 
 //Sirve para obtener un cantante específico por su ID
 router.get("/masInfo/:id", (req, res) => {
-  /* let elemento = servidor.elemento(req.params.id); */
-  console.log(elemento);
-  res.render("masinfo", { elemento });
+  let artista = servidor.getArtista(req.params.id);
+  res.render("masinfo",{artista});
+}); 
+
+
+router.get("/masInfo/:id", (req, res) => {
+  // req lo que enviamos - res lo que express nos responde
+  let artista = servidor.getArtista(req.params.id); // 
+  res.render("masInfo", { artista }); // Renderizar la plantilla 'equipos' con el equipo obtenido
 });
+ 
+router.get("/new", (req, res) => {
+  // req lo que enviamos - res lo que express nos responde
+  res.render("nuevo");
+});  
+ 
+router.post("/NuevoElementoGuardado", (req, res) => {
+  let { nombre, descripcion, foto, fecha,hora,genero } = req.body;
+  let canciones = [];
+  let id = teamService.addArtista({
+    name,
+    descripcion,
+    foto, 
+    fecha, 
+    hora, 
+    genero,
+    canciones, 
+  }); 
+
+  let artista = teamService.getArtista(req.params.id); 
+  res.render("masinfo", { artista }); // Renderizar la plantilla 'equipos' 
+ 
+});
+
+ 
+
+
 
 export default router;
