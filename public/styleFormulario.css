@@ -6,6 +6,7 @@ body {   /*Color del fondo con degradado*/
 .contenedor1 {    /*Estilo del div de la izquierda*/
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 
 .contenedor2 {    /*Estilo del div de la derecha*/

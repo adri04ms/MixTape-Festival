@@ -23,7 +23,7 @@ export function loadSampleData(){
     });
 
     addArtista({
-       nombre: 'Dani Fernandez',
+       nombre: 'DANI FERNANDEZ',
         imagen: 'https://www.themusicrepublic.es/wp-content/uploads/2022/03/Dani-Fernandez-2.jpg',
         genero: 'POP',
         fecha: '17/07/2024',  
