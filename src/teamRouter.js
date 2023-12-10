@@ -24,8 +24,9 @@ router.get("/nuevo", (req, res) => {
 router.post("/newElemento", (req, res) => {
 
   let { nombre, imagen, genero, fecha, hora, descripcion } = req.body;
-  servidor.addArtista({nombre, imagen, genero, fecha, hora, descripcion });
-  res.redirect("/")
+  servidor.addArtista({nombre, imagen, genero, fecha, hora, descripcion});
+  let artista = ({nombre, imagen, genero, fecha, hora, descripcion});
+  res.render("masinfo",{artista});
 });
 
 router.get("/masInfo/:id/borrar", (req, res) => {
