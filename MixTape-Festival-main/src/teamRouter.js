@@ -33,16 +33,16 @@ router.get("/new", (req, res) => {
 });  
  
 router.post("/NuevoElementoGuardado", (req, res) => {
-  let { nombre, descripcion, foto, fecha,hora,genero } = req.body;
+  let { nombre, imagen, genero, fecha, hora, descripcion, canciones } = req.body;
   let canciones = [];
   let id = teamService.addArtista({
-    name,
-    descripcion,
-    foto, 
+    nombre,
+    imagen, 
+    genero,
     fecha, 
     hora, 
-    genero,
-    canciones, 
+    descripcion, 
+    canciones 
   }); 
 
   let artista = teamService.getArtista(req.params.id); 
