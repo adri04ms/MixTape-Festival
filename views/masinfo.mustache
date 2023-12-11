@@ -45,6 +45,16 @@
 
       <div class="col-6 col-md-3 col-lg-5 nueva-cancion"><!--Nuevo subelemento-->
         <h2>Nueva cancion</h2>
+
+      <div id="alertaNombre" class="alert alert-danger" style="display: none;" role="alert">
+          Por favor, completa el nombre.
+      </div>
+      <div id="alertaDuracion" class="alert alert-danger" style="display: none;" role="alert">
+          Por favor, indica la duración de la canción.
+      </div>
+      <div id="alertaLanzamiento" class="alert alert-danger" style="display: none;" role="alert">
+          Por favor, indica el año de lanzamiento de la canción.
+      </div>
         <form role="form" class="formulario" action="/nuevaCancion/{{artista.id}}" method="post" action="/procesarFormulario">
           <table class="tabla">
             <tr>
@@ -96,5 +106,43 @@
     </div>
   </div>
   <br><br>
+
+<script>
+        function validarFormulario() {
+            var nombre = document.getElementById('nombre').value;
+            var imagen = document.getElementById('duracion').value;
+            var genero = document.getElementById('lanzamiento').value;
+
+            if (nombre === '' || duracion === '' || lanzamiento === '') {
+                // Muestra la alerta
+                if (nombre === ''){
+                document.getElementById('alertaNombre').style.display = 'block';
+                setTimeout(function () {
+                    document.getElementById('alertaNombre').style.display = 'none';
+                }, 4000);
+                return false; 
+                }
+                else if (duracion === ''){
+                document.getElementById('alertaDuracion').style.display = 'block';
+                setTimeout(function () {
+                    document.getElementById('alertaDuracion').style.display = 'none';
+                }, 4000);
+                return false; 
+                }
+                else if (lanzamiento === ''){
+                document.getElementById('alertaLanzamiento').style.display = 'block';
+                setTimeout(function () {
+                    document.getElementById('alertaLanzamiento').style.display = 'none';
+                }, 4000);
+                return false; 
+                }
+                
+                
+            }
+            
+
+            return true; // Envía el formulario si todos los campos están llenos
+        }
+    </script>
 </body>
 </html>
