@@ -305,7 +305,8 @@ export function addArtista(artista) {
 
 export function addCancion(id,{nombre, duracion, lanzamiento, colaborador}) {
     const artistToUpdate = artistas.get(id);
-    let nuevaCancion = {nombre, duracion, lanzamiento, colaborador};          
+    let nuevaCancion = {nombre, duracion, lanzamiento, colaborador};  
+    nuevaCancion.colaborador = colaborador !== "" ? nuevaCancion.colaborador : "Sin colaborador";        
     artistToUpdate.canciones.push(nuevaCancion);
 }
 
