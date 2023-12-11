@@ -23,7 +23,8 @@ router.get("/nuevo", (req, res) => {
 
 router.post("/newElemento", (req, res) => {
   let {nombre, imagen, genero, fecha, hora, descripcion } = req.body;
-  let artista = servidor.getArtista(servidor.addArtista({nombre, imagen, genero, fecha, hora, descripcion}));
+  let canciones = [];
+  let artista = servidor.getArtista(servidor.addArtista({nombre, imagen, genero, fecha, hora, descripcion,canciones}));
   res.render("masinfo",{artista});
 });
 
