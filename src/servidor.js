@@ -230,6 +230,11 @@ export function addArtista(artista) {
   
 }
 
+export function addCancion(id,{nombre, duracion, lanzamiento, colaborador}) {
+    const artistToUpdate = artistas.get(id);
+    let nuevaCancion = {nombre, duracion, lanzamiento, colaborador};          
+    artistToUpdate.canciones.push(nuevaCancion);
+}
 
 export function getArtistas(from, to) {
     return [...artistas.values()];

@@ -45,10 +45,10 @@
 
       <div class="col-6 col-md-3 col-lg-3 nueva-cancion"><!--Nuevo subelemento-->
         <h2>Nueva cancion</h2>
-        <form>
+        <form role="form" class="formulario" action="/nuevaCancion/{{artista.id}}" method="post">
           <table class=" tabla">
             <tr>
-              <td><input placeholder="Nombre" type="text"></td>
+              <td><input placeholder="Nombre" type="text" id="nombre" name="nombre"></td>
             </tr>
             <tr>
               <td>
@@ -56,7 +56,7 @@
               </td>
             </tr>
             <tr>
-              <td><input placeholder="Duracion" type="text"></td>
+              <td><input placeholder="Duracion" type="text" id="duracion" name="duracion"></td>
             </tr>
             <tr>
               <td>
@@ -64,8 +64,7 @@
               </td>
             </tr>
             <tr>
-            <tr>
-              <td><input placeholder="Lanzamiento" type="text"></td>
+              <td><input placeholder="Año de lanzamiento" type="text" id="lanzamiento" name="lanzamiento"></td>
             </tr>
             <tr>
               <td>
@@ -73,12 +72,13 @@
               </td>
             </tr>
             <tr>
+              <td><input placeholder="Colaborador" type="text" id="colaborador" name="colaborador"></td>
+            </tr>
             <tr>
-              <td><input placeholder="Colaborador" type="text"></td>
+            <td><a><button class="button" type="submit">GUARDAR</button></a></td>
             </tr>
           </table>
         </form><br>
-        <a><button class="button" type="submit">GUARDAR</button></a>
       </div>
 
       <div class="contenedor-de-botones row"><!--Contenedor de botones-->
