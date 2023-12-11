@@ -32,6 +32,25 @@
             <div class="contenedor2 col-sm-7">
                 <h2><small>Editar Cantante</small></h2>   <!-- Contenedor de la derecha con el formulario-->
 
+                <div id="alertaNombre" class="alert alert-danger" style="display: none;" role="alert">
+                    Por favor, completa el nombre.
+                </div>
+                <div id="alertaImagen" class="alert alert-danger" style="display: none;" role="alert">
+                    Por favor, inserta la URL de la imagen.
+                </div>
+                <div id="alertaFecha" class="alert alert-danger" style="display: none;" role="alert">
+                    Por favor, especifica la fecha.
+                </div>
+                <div id="alertaHora" class="alert alert-danger" style="display: none;" role="alert">
+                    Por favor, especifica la hora.
+                </div>
+                <div id="alertaGenero" class="alert alert-danger" style="display: none;" role="alert">
+                    Por favor, selecciona un género.
+                </div>
+                <div id="alertaDescripcion" class="alert alert-danger" style="display: none;" role="alert">
+                    Por favor, completa la descripción.
+                </div>
+
                 <form role="form" class="formulario" action="/update/{{artista.id}}" method="post">
                         <table class="default">
                         <tr>
@@ -90,6 +109,66 @@
             </div>
         </div>
     </div>
+<script>
+        function validarFormulario() {
+            var nombre = document.getElementById('nombre').value;
+            var imagen = document.getElementById('imagen').value;
+            var genero = document.getElementById('genero').value;
+            var fecha = document.getElementById('fecha').value;
+            var hora = document.getElementById('hora').value;
+            var descripcion = document.getElementById('descripcion').value;
+
+            if (nombre === '' || imagen === '' || genero === '' || fecha === '' || hora === '' || descripcion === '') {
+                // Muestra la alerta
+                if (nombre === ''){
+                document.getElementById('alertaNombre').style.display = 'block';
+                setTimeout(function () {
+                    document.getElementById('alertaNombre').style.display = 'none';
+                }, 4000);
+                return false; 
+                }
+                else if (imagen === ''){
+                document.getElementById('alertaImagen').style.display = 'block';
+                setTimeout(function () {
+                    document.getElementById('alertaImagen').style.display = 'none';
+                }, 4000);
+                return false; 
+                }
+                else if (genero === ''){
+                document.getElementById('alertaGenero').style.display = 'block';
+                setTimeout(function () {
+                    document.getElementById('alertaGenero').style.display = 'none';
+                }, 4000);
+                return false; 
+                }
+                else if (fecha === ''){
+                document.getElementById('alertaFecha').style.display = 'block';
+                setTimeout(function () {
+                    document.getElementById('alertaFecha').style.display = 'none';
+                }, 4000);
+                return false; 
+                }
+                else if (hora === ''){
+                document.getElementById('alertaHora').style.display = 'block';
+                setTimeout(function () {
+                    document.getElementById('alertaHora').style.display = 'none';
+                }, 4000);
+                return false; 
+                }
+                else if (descripcion === ''){
+                document.getElementById('alertaDescripcion').style.display = 'block';
+                setTimeout(function () {
+                    document.getElementById('alertaDescripcion').style.display = 'none';
+                }, 4000);
+                return false; 
+                } 
+                
+            }
+            
+
+            return true; // Envía el formulario si todos los campos están llenos
+        }
+    </script>
 </body>
 
 </html>
