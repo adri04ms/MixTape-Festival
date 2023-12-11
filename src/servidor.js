@@ -333,6 +333,4 @@ export function editArtista(id, { nombre, imagen, genero, fecha, hora, descripci
         artistas.set(id, artistToUpdate);
     }
 
-
-
 loadSampleData();  

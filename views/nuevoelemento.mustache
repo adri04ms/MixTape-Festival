@@ -36,16 +36,16 @@
                         <table class="default">
                         <tr>
                             <td><label for="nombre">NOMBRE</label></td>
-                            <td><input placeholder=" Introduce el nombre del cantante" type="text" id="nombre" name="nombre"></td>
+                            <td><input placeholder=" Introduce el nombre del cantante" type="text" id="nombre" name="nombre" required></td>
                         </tr>
                         <tr>
                             <td><label for="imagen">IMAGEN</label></td>
-                            <td><input placeholder=" Introduce la URL de la foto del cantante" type="url" id="imagen" name="imagen"></td>
+                            <td><input placeholder=" Introduce la URL de la foto del cantante" type="url" id="imagen" name="imagen" required></td>
                         </tr>
                         <tr>
                             <td><label for="genero">GENERO</label></td>
-                            <td><select aria-label="Formulario" id="genero" name="genero" type="string">
-                                    <option value="Genero">Selecciona un género</option>
+                            <td><select aria-label="Formulario" id="genero" name="genero" type="string" required>
+                                    <option value="" disable selected>Selecciona un género</option>
                                     <option value="POP ESPAÑOL">Pop español</option>
                                     <option value="POP">Pop</option>
                                     <option value="REGGUETON">Reggueton</option>
@@ -61,18 +61,18 @@
                         </tr>
                         <tr>
                             <td><label for="fecha">FECHA</label></td>
-                            <td><input placeholder="Día del concierto" type="date" id="string" name="fecha"></td>
+                            <td><input placeholder="Día del concierto" type="date" id="string" name="fecha" required></td>
                         </tr>
                         <tr>
                             <td><label for="hora">HORA</label></td>
-                            <td><input placeholder=" Hora del concierto" type="time" id="hora" name="hora"></td>
+                            <td><input placeholder=" Hora del concierto" type="time" id="hora" name="hora" required></td>
                         </tr>
                         <tr>
                             <td><p>   </p></td>
                         </tr>
                         <tr>
                             <td><label for="descripcion">DESCRIPCION</label></td>
-                            <td><textarea placeholder=" Introduce la descripción del cantante" type="text" id="descripcion" name="descripcion" rows=5 cols=63></textarea></td>
+                            <td><textarea placeholder=" Introduce la descripción del cantante"required type="text" id="descripcion" name="descripcion" rows=5 cols=63></textarea></td>
                         </tr>
                         <tr>
                         <td><br></td>
