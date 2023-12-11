@@ -170,7 +170,7 @@ export function cargarArtistas(){
         {
             nombre: 'Bad reputation',
             duracion: '3:17',
-            colaborador: 'nadie',
+            colaborador: 'Sin colaborador',
             lanzamiento: '2019'
         }
         ] 
