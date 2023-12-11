@@ -45,10 +45,10 @@
 
       <div class="col-6 col-md-3 col-lg-3 nueva-cancion"><!--Nuevo subelemento-->
         <h2>Nueva cancion</h2>
-        <form role="form" class="formulario" action="/nuevaCancion/{{artista.id}}" method="post">
-          <table class=" tabla">
+        <form role="form" class="formulario" action="/nuevaCancion/{{artista.id}}" method="post" action="/procesarFormulario">
+          <table class="tabla">
             <tr>
-              <td><input placeholder="Nombre" type="text" id="nombre" name="nombre"></td>
+              <td><input placeholder="Nombre" type="text" id="nombre" name="nombre" required></td>
             </tr>
             <tr>
               <td>
@@ -56,7 +56,7 @@
               </td>
             </tr>
             <tr>
-              <td><input placeholder="Duracion" type="text" id="duracion" name="duracion"></td>
+              <td><input placeholder="Duracion" type="text" id="duracion" name="duracion" required></td>
             </tr>
             <tr>
               <td>
@@ -64,7 +64,7 @@
               </td>
             </tr>
             <tr>
-              <td><input placeholder="Año de lanzamiento" type="text" id="lanzamiento" name="lanzamiento"></td>
+              <td><input placeholder="Año de lanzamiento" type="text" id="lanzamiento" name="lanzamiento" required></td>
             </tr>
             <tr>
               <td>
@@ -72,7 +72,7 @@
               </td>
             </tr>
             <tr>
-              <td><input placeholder="Colaborador (Opcional)" type="text" id="colaborador" name="colaborador"></td>
+              <td><input placeholder="Colaborador (Opcional)" type="text" id="colaborador" name="colaborador" required></td>
             </tr>
             <tr>
             <td><a><button class="button" type="submit">GUARDAR</button></a></td>
