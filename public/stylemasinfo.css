@@ -70,24 +70,30 @@ color:white;
   margin-left:30px; 
 }
 
+.editar{   /*Margen boton editar*/
+  margin-left: 20px;
+}
+
+.elementos{   /*Margen boton volver*/
+  margin-left: 20px;
+}
+
 .canciones{   /*Margen lista de canciones*/
-  margin-left: 45px;
+  margin-left: 50px;
 }
 
 .nueva-cancion{   /*Margen formulario*/
-  margin-left: 85px;
+  margin-left: -50px;
 }
 
 .cantante img { /*TAMAÑO IMAGEN*/
-  width: 400px; 
-  height: 550px;
+  width: 30vw; 
+  height: 45vw;
   padding: 5px;
+  margin-left: 50px;
 }
 
 @media only screen and (min-width:768px) and (max-width: 991px) {   /*CONDICIONES PARA PANTALLAS MENORES A 767PX DE ANCHO*/
-.boton-masinfo {   /*Margen boton*/
-  margin: 5px 0;   
-}
 
 .button{   /*Disposicion botones*/
   font-size: 10px;
@@ -111,15 +117,15 @@ p{   /*Formato parrafo*/
 }
 
 .boton-masinfo button {   /*Margen boton*/
-  margin-left:50px; 
+  margin-left:20px;
 }
 
 .editar{   /*Margen boton editar*/
-  margin-left: 70px;
+  margin-left: 10px;
 }
 
 .elementos{   /*Margen boton volver*/
-  margin-left: 80px;
+  margin-left: 10px;
 }
 
 .canciones{   /*Margen canciones*/
@@ -178,5 +184,16 @@ p{   /*Formato parrafo*/
   width: 50%; 
   height: auto;
   padding: 5px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
+
+.cantante { /*TAMAÑO IMAGEN*/
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+
 }

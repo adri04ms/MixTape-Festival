@@ -15,14 +15,14 @@
   <div class="container-fluid"><!--Contenedor de elemento-->
     <div class="izquierda row">
       <h1>{{artista.nombre}}</h1>
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="text-center align-items-center justify-content-center cantante">
+      <div class="col-12 col-md-6 col-lg-5">
+        <div class="cantante">
           <img src="{{artista.imagen}}" alt="{{artista.nombre}}">
         </div>
         <br>
       </div>
 
-      <div class="col-12 col-md-6 col-lg-7">
+      <div class="col-12 col-md-6 col-lg-5">
         <br>
         <h2>{{artista.genero}}</h2><!--Atributo de elemento-->
         <p>{{artista.descripcion}}</p>
@@ -32,7 +32,7 @@
         <p>{{artista.hora}}</p>
       </div>
       <br>
-      <div class="col-6 col-md-3 col-lg-3 canciones"><!--Lista de sububelementos-->
+      <div class="col-6 col-md-3 col-lg-5 canciones"><!--Lista de sububelementos-->
         <h2>Canciones</h2>
         <br>
         {{#artista.canciones}}
@@ -43,7 +43,7 @@
         {{/artista.canciones}}
       </div>
 
-      <div class="col-6 col-md-3 col-lg-3 nueva-cancion"><!--Nuevo subelemento-->
+      <div class="col-6 col-md-3 col-lg-5 nueva-cancion"><!--Nuevo subelemento-->
         <h2>Nueva cancion</h2>
         <form role="form" class="formulario" action="/nuevaCancion/{{artista.id}}" method="post">
           <table class=" tabla">
@@ -83,13 +83,13 @@
 
       <div class="contenedor-de-botones row"><!--Contenedor de botones-->
         <br>
-        <div class="boton-masinfo col-4 col-md-1 col-lg-1"><br>
+        <div class="boton-masinfo col-2 col-md-2 col-lg-1"><br>
           <a href="/masInfo/{{artista.id}}/borrar"><button class="button" type="submit">BORRAR</button></a>
         </div>
-        <div class="boton-masinfo col-4 col-md-1 col-lg-1 editar"><br>
+        <div class="boton-masinfo col-2 col-md-2 col-lg-1 editar"><br>
           <a href="/editar/{{artista.id}}"><button class="button" type="submit">EDITAR</button></a>
         </div>
-        <div class="boton-masinfo col-4 col-md-1 col-lg-1 elementos"><br>
+        <div class="boton-masinfo col-3 col-md-3 col-lg-1 elementos"><br>
           <a href="/"><button class="button" type="submit">VER TODOS</button></a>
         </div>
       </div>
