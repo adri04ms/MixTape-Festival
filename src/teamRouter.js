@@ -55,17 +55,5 @@ router.get("/masInfo/:id/borrar", (req, res) => {
   res.redirect("/"); 
 });
 
-router.post("/newElemento", (req, res) => {
-  let { nombre, imagen, genero, fecha, hora, descripcion } = req.body;
-
-  // Validar campos obligatorios en el lado del servidor
-  if (!nombre || !genero || !fecha || !hora ||!descripcion ) {
-    // Devuelve un mensaje de error
-    return res.render("nuevoelemento", { error: 'Todos los campos marcados con * son obligatorios.', nombre, imagen, genero, fecha, hora, descripcion });
-  }
-
-  let artista = servidor.getArtista(servidor.addArtista({ nombre, imagen, genero, fecha, hora, descripcion }));
-  res.render("masinfo", { artista });
-});
 
 export default router;
