@@ -68,7 +68,7 @@
                                     <option value="" disable selected>Selecciona un género</option>
                                     <option value="POP ESPAÑOL">Pop español</option>
                                     <option value="POP">Pop</option>
-                                    <option value="REGGUETON">Reggueton</option>
+                                    <option value="REGGUETON">Reguetón</option>
                                     <option value="RAP">Rap</option>
                                     <option value="ROCK">Rock</option>
                                     <option value="INDIE">Indie</option>
@@ -123,51 +123,38 @@
             if (nombre === '' || imagen === '' || genero === '' || fecha === '' || hora === '' || descripcion === '') {
                 // Muestra la alerta
                 if (nombre === ''){
-                document.getElementById('alertaNombre').style.display = 'block';
-                setTimeout(function () {
-                    document.getElementById('alertaNombre').style.display = 'none';
-                }, 4000);
-                return false; 
-                }
-                else if (imagen === ''){
-                document.getElementById('alertaImagen').style.display = 'block';
-                setTimeout(function () {
-                    document.getElementById('alertaImagen').style.display = 'none';
-                }, 4000);
-                return false; 
-                }
-                else if (genero === ''){
-                document.getElementById('alertaGenero').style.display = 'block';
-                setTimeout(function () {
-                    document.getElementById('alertaGenero').style.display = 'none';
-                }, 4000);
-                return false; 
-                }
-                else if (fecha === ''){
-                document.getElementById('alertaFecha').style.display = 'block';
-                setTimeout(function () {
-                    document.getElementById('alertaFecha').style.display = 'none';
-                }, 4000);
-                return false; 
-                }
-                else if (hora === ''){
-                document.getElementById('alertaHora').style.display = 'block';
-                setTimeout(function () {
-                    document.getElementById('alertaHora').style.display = 'none';
-                }, 4000);
-                return false; 
-                }
-                else if (descripcion === ''){
-                document.getElementById('alertaDescripcion').style.display = 'block';
-                setTimeout(function () {
-                    document.getElementById('alertaDescripcion').style.display = 'none';
-                }, 4000);
-                return false; 
+                    document.getElementById('alertaNombre').style.display = 'block';
+                    setTimeout(function () {
+                        document.getElementById('alertaNombre').style.display = 'none';
+                    }, 4000);
+                } else if (imagen === ''){
+                    document.getElementById('alertaImagen').style.display = 'block';
+                    setTimeout(function () {
+                        document.getElementById('alertaImagen').style.display = 'none';
+                    }, 4000);
+                } else if (genero === ''){
+                    document.getElementById('alertaGenero').style.display = 'block';
+                    setTimeout(function () {
+                        document.getElementById('alertaGenero').style.display = 'none';
+                    }, 4000);
+                } else if (fecha === ''){
+                    document.getElementById('alertaFecha').style.display = 'block';
+                    setTimeout(function () {
+                        document.getElementById('alertaFecha').style.display = 'none';
+                    }, 4000);
+                } else if (hora === ''){
+                    document.getElementById('alertaHora').style.display = 'block';
+                    setTimeout(function () {
+                        document.getElementById('alertaHora').style.display = 'none';
+                    }, 4000);
+                } else if (descripcion === ''){
+                    document.getElementById('alertaDescripcion').style.display = 'block';
+                    setTimeout(function () {
+                        document.getElementById('alertaDescripcion').style.display = 'none';
+                    }, 4000);
                 } 
-                
+                return false; 
             }
-            
-
             return true; // Envía el formulario si todos los campos están llenos
         }
     </script>
