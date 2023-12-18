@@ -38,7 +38,45 @@ router.post("/nuevaCancion/:id", (req, res) => {
 
 router.get("/editar/:id", (req, res) => {
   let artista = servidor.getArtista(req.params.id);
-  res.render("editarelemento",{artista});
+
+  console.log(artista.genero);
+ 
+  if (artista.genero = 'POP ESPAÑOL'){
+    artista.genero = {POP_ESPANYOL : true}
+  }
+  else if (artista.genero = 'ROCK'){
+    artista.genero = {ROCK : true}
+  }
+  else if (artista.genero = 'METAL'){
+    artista.genero = {METAL: true}
+  }
+  else if (artista.genero = 'POP'){
+    artista.genero = {POP : true}
+  }
+  else if (artista.genero = 'JAZZ'){
+    artista.genero = {JAZZ : true}
+  }
+  else if (artista.genero = 'ALTERNATIVO'){
+    artista.genero = {ALTERNATIVO : true}
+  }
+  else if (artista.genero = 'HIP HOP'){
+    artista.genero = {HIP_HOP : true}
+  }
+  else if (artista.genero = 'TRAP LATINO'){
+    artista.genero = {TRAP_LATINO: true}
+  }
+  else if (artista.genero = 'INDIE'){
+    artista.genero = {INDIE: true}
+  }
+  else if (artista.genero = 'RAP'){
+    artista.genero = {RAP : true}
+  }
+  else if (artista.genero = 'REGGUETON'){
+    artista.genero = {REGGETON : true}
+  }
+
+  console.log(artista.genero);
+  res.render("nuevoelemento",{artista});
 }); 
 
 
