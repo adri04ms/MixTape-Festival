@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>NUEVO ELEMENTO</title>
+    <title>ELEMENTO</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -50,47 +50,148 @@
                     </div>
                 </div>
 
+
+                {{#artista.id}}    
+                <form role="form" class="formulario" action="/update/{{artista.id}}" method="post" onsubmit="return validarFormulario()">
+                {{/artista.id}}
+                {{^artista.id}}
                 <form role="form" class="formulario" action="/newElemento" method="post" onsubmit="return validarFormulario()">
+                {{/artista.id}}
+
                     <table class="default">
                         <tr>
                             <td><label for="nombre">NOMBRE</label></td>
-                            <td><input placeholder=" Introduce el nombre del cantante" type="text" id="nombre" name="nombre" ></td>
+                            {{#artista.nombre}}
+                            <td><input placeholder=" Introduce el nombre del cantante" type="text" id="nombre" name="nombre" value= {{artista.nombre}}></td>
+                            {{/artista.nombre}}
+                            {{^artista.nombre}}
+                            <td><input placeholder=" Introduce el nombre del cantante" type="text" id="nombre" name="nombre"></td>
+                            {{/artista.nombre}}
                         </tr>
                         <tr>
                             <td><label for="imagen">IMAGEN</label></td>
+                            {{#artista.imagen}}
+                            <td><input placeholder=" Introduce la URL de la foto del cantante" type="url" id="imagen" name="imagen" value= {{artista.imagen}} ></td>
+                            {{/artista.imagen}}
+                            {{^artista.imagen}}
                             <td><input placeholder=" Introduce la URL de la foto del cantante" type="url" id="imagen" name="imagen" ></td>
+                            {{/artista.imagen}}
                         </tr>
                         <tr>
                             <td><label for="genero">GENERO</label></td>
-                            <td><select aria-label="Formulario" id="genero" name="genero" type="string" >
-                                    <option value="" disable selected>Selecciona un género</option>
+                          
+                            <td><select aria-label="Formulario" id="genero" name="genero" type="string">
+                            <option value="" disable selected>Selecciona un género</option>
+                                    {{#artista.genero.POP_ESPANYOL}}
+                                    <option value="POP ESPAÑOL" selected>Pop español</option>
+                                    {{/artista.genero.POP_ESPANYOL}}
+                                    {{^artista.genero.POP_ESPANYOL}}
                                     <option value="POP ESPAÑOL">Pop español</option>
+                                    {{/artista.genero.POP_ESPANYOL}}
+
+                                    {{#artista.genero.POP}}
+                                    <option value="POP" selected>Pop</option>
+                                    {{/artista.genero.POP}}
+                                    {{^artista.genero.POP}}
                                     <option value="POP">Pop</option>
-                                    <option value="REGGUETON">Reguetón</option>
+                                    {{/artista.genero.POP}}
+
+                                    {{#artista.genero.REGGUETON}}
+                                    <option value="REGGUETON" selected>Reguetón</option>
+                                    {{/artista.genero.REGGUETON}}
+                                    {{^artista.genero.REGGUETON}}
+                                    <option value="REGGUETON" >Reguetón</option>
+                                    {{/artista.genero.REGGUETON}}
+
+                                    {{#artista.genero.RAP}}
+                                    <option value="RAP" selected>Rap</option>
+                                    {{/artista.genero.RAP}}
+                                    {{^artista.genero.RAP}}
                                     <option value="RAP">Rap</option>
+                                    {{/artista.genero.RAP}}
+
+                                    {{#artista.genero.ROCK}}
+                                    <option value="ROCK" selected>Rock</option>
+                                    {{/artista.genero.ROCK}}
+                                    {{^artista.genero.ROCK}}
                                     <option value="ROCK">Rock</option>
-                                    <option value="INDIE">Indie</option>
+                                    {{/artista.genero.ROCK}}
+
+                                    {{#artista.genero.INDIE}}
+                                    <option value="INDIE" selected>Indie</option>
+                                    {{/artista.genero.INDIE}}
+                                    {{^artista.genero.INDIE}}
+                                    <option value="INDIE" >Indie</option>
+                                    {{/artista.genero.INDIE}}
+
+                                    {{#artista.genero.ALTERNATIVO}}
+                                    <option value="ALTERNATIVO" selected>Alternativo</option>
+                                    {{/artista.genero.ALTERNATIVO}}
+                                    {{^artista.genero.ALTERNATIVO}}
                                     <option value="ALTERNATIVO">Alternativo</option>
+                                    {{/artista.genero.ALTERNATIVO}}
+
+                                    {{#artista.genero.HIP_HOP}}
+                                    <option value="HIP HOP" selected>Hip Hop</option>
+                                    {{/artista.genero.HIP_HOP}}
+                                    {{^artista.genero.HIP_HOP}}
                                     <option value="HIP HOP">Hip Hop</option>
+                                    {{/artista.genero.HIP_HOP}}
+
+                                    {{#artista.genero.METAL}}
+                                    <option value="METAL" selected>Metal</option>
+                                    {{/artista.genero.METAL}}
+                                    {{^artista.genero.METAL}}
                                     <option value="METAL">Metal</option>
+                                    {{/artista.genero.METAL}}
+
+                                    {{#artista.genero.JAZZ}}
+                                    <option value="JAZZ" selected>Jazz</option>
+                                    {{/artista.genero.JAZZ}}
+                                    {{^artista.genero.JAZZ}}
                                     <option value="JAZZ">Jazz</option>
+                                    {{/artista.genero.JAZZ}}
+
+                                    {{#artista.genero.TRAP_LATINO}}
+                                    <option value="TRAP LATINO" selected>Trap latino</option>
+                                    {{/artista.genero.TRAP_LATINO}}
+                                    {{^artista.genero.TRAP_LATINO}}
                                     <option value="TRAP LATINO">Trap latino</option>
+                                    {{/artista.genero.TRAP_LATINO}}
                                 </select></td>
+                           
+
                         </tr>
                         <tr>
                             <td><label for="fecha">FECHA</label></td>
+                            {{#artista.fecha}}
+                            <td><input placeholder="Día del concierto" type="date" id="fecha" name="fecha" value= {{artista.fecha}}></td>
+                            {{/artista.fecha}}
+                            {{^artista.fecha}}
                             <td><input placeholder="Día del concierto" type="date" id="fecha" name="fecha" ></td>
+                            {{/artista.fecha}}
                         </tr>
                         <tr>
                             <td><label for="hora">HORA</label></td>
+                            {{#artista.hora}}
+                            <td><input placeholder=" Hora del concierto" type="time" id="hora" name="hora" value= {{artista.hora}} ></td>
+                            {{/artista.hora}}
+                            {{^artista.hora}}
                             <td><input placeholder=" Hora del concierto" type="time" id="hora" name="hora" ></td>
+                            {{/artista.hora}}
+                        
                         </tr>
                         <tr>
                             <td><p>   </p></td>
                         </tr>
                         <tr>
                             <td><label for="descripcion">DESCRIPCION</label></td>
+                            {{#artista.descripcion}}
+                            <td><textarea placeholder=" Introduce la descripción del cantante"  type="text" id="descripcion" name="descripcion" rows=5 cols=63>{{artista.descripcion}}</textarea></td>
+                            {{/artista.descripcion}}
+                            {{^artista.descripcion}}
                             <td><textarea placeholder=" Introduce la descripción del cantante"  type="text" id="descripcion" name="descripcion" rows=5 cols=63></textarea></td>
+                            {{/artista.descripcion}}
                         </tr>
                         <tr>
                             <td><br></td>
