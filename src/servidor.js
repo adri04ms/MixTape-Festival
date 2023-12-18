@@ -205,7 +205,7 @@ export function cargarArtistas(){
 
     addArtista({
         nombre: 'ONE DIRECTION',
-        imagen: 'https://m.media-amazon.com/images/I/81A-XG0dcXL._AC_UF894,1000_QL80_.jpg',
+        imagen: 'https://m.media-amazon.com/images/I/81A-XG0dcXL.AC_UF894,1000_QL80.jpg',
         genero: 'POP',
         fecha: '2024-07-18',  
         hora: '15:45',
@@ -341,4 +341,4 @@ export function editArtista(id, { nombre, imagen, genero, fecha, hora, descripci
         artistas.set(id, artistToUpdate);
     }
 
-cargarArtistas();  
+cargarArtistas();
