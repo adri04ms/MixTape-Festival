@@ -2,7 +2,13 @@
 <html lang="en">
 
 <head>
-    <title>ELEMENTO</title>
+    {{#artista.id}}    
+    <title>EDITAR ELEMENTO</title>
+    {{/artista.id}}
+    {{^artista.id}}
+    <title>NUEVO ELEMENTO</title>
+    {{/artista.id}}
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -21,7 +27,12 @@
         </div>
         <div class="row content">
             <div class="contenedor1 col-sm-4 sidenav">
+                {{#artista.id}}    
+                <h2>Editar elemento</h2>
+                {{/artista.id}}
+                {{^artista.id}}
                 <h2>Nuevo elemento</h2>
+                {{/artista.id}}
                 <p> Aquí puedes añadir un nuevo cantante, una breve descripción, su género musical, la fecha y la hora del concierto, y su imagen (recuerda que la foto del artista tiene que ser URL)
                 </p>
             </div>
