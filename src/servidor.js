@@ -85,7 +85,7 @@ export function cargarArtistas(){
         fecha: '2024-07-18',  
         hora: '16:15',
         descripcion: 'Diego Garcia Andanuche, conocido artísticamente como Nikone, es un chico nacido en 1993 en el barrio Madrileño de Carabanchel. Fascinado desde pequeño por la escritura y la música, será atraído por el género Rap, ya que le permitía desahogarse y poner sus letras por fin sobre música. Empezó así a cantar por el barrio y en cada batalla/freestyle donde podía participar.Pero Nikone no es ningún novato. Su crecimiento como artista sucede sobre todo en Youtube y sus inicios se remontan a 2008, cuando empieza a dar forma a sus primeras canciones. Desde entonces no ha parado de escribir y en 2013 publica por fin su primera maqueta, Pa qué. Dos años más tarde lanza Biribibae, su tercer trabajo, que además de dar título a la maqueta, se convierte en una palabra fetiche que dará nombre desde entonces a su estilo personal. Cuando le decían que su estilo no era ni rap ni reggae, Nikone aclaraba que él hacía Biribibae, su particular visión de un estilo transgénero. En los últimos meses ha ido lanzando un buen puñado de temas. El último es Kiubo, una canción que transpira rap y reggae y que supone el sexto avance del disco después de Blanco y Negro, Dale, Buril, Casino y Báilalo. Precisamente, tracks como estos alertan de la gran diversidad de estilos que nos espera en Onirikone, desde rap o trap hasta otros sonidos más pop.',
-        Canciones: [
+        canciones: [
         {
             nombre: 'Lo Real',
             duracion: '4:43',
@@ -106,7 +106,7 @@ export function cargarArtistas(){
     addArtista({
         nombre: 'DANI FERNANDEZ',
          imagen: 'https://hips.hearstapps.com/hmg-prod/images/dani-fondo-blanco-1546434571.jpg',
-         genero: 'POP',
+         genero: 'POP ESPAÑOL',
          fecha: '2024-07-17',  
          hora: '19:45',
          descripcion: 'Daniel Fernández Delgado, mejor conocido en el medio musical como Dani Fernández; también conocido por ser exmiembro de la banda Auryn, es un cantante y compositor. Nació en Alcázar de San Juan, Ciudad Real, España, el 11 de diciembre de 1991. Desde el 2009 hasta el 2016 estuvo como miembro de la banda Auryn, donde ganó un amplio reconocimiento en la escena musical; y en ese mismo 2016 comienza su carrera como solista haciendo covers de famosos cantantes. Tras haber ganado más popularidad después de haber participado en Destino Eurovisión, el 18 de octubre de 2011 los chicos de Auryn lanzaron su primer disco, titulado ‘Endeless Road, 7058’ de manera independiente y sin el apoyo de ninguna discográfica. El álbum fue número uno en España y permaneció durante dos años en la lista de los más vendidos. Las discográficas se dieron cuenta del potencial del grupo y en 2012 Auryn pasó a formar parte de la multinacional Warner Music Spain. En 2013 lanzaron su segundo disco ‘Anti-heroes’, con el que cuatro semanas después de su lanzamiento recibieron el Disco de Oro y con el que además fueron los ganadores del premio MTV Europe Music Awards 2013 al Mejor Artista Español.',
@@ -131,7 +131,7 @@ export function cargarArtistas(){
     addArtista({
         nombre: 'RAUW ALEJANDRO',
         imagen: 'https://www.rollingstone.com/wp-content/uploads/2022/01/R1360_RAUW_3.jpg',
-        genero: 'REGUETON',
+        genero: 'REGGUETON',
         fecha: '2024-07-18',  
         hora: '23:30',
         descripcion: 'Raúl Alejandro Ocasio Ruiz, conocido artísticamente como Rauw Alejandro, nació en Palma Sola, un pequeño y humilde barrio de Canóvanas (norte de Puerto Rico) en una familia humilde. Corría el año 1993. Sus padres, ambos cantantes, se divorciaron cuando él tenía 10 años. Tras la separación, su padre se mudó a Estados Unidos, su país natal, y Rauw Alejandro se crió con su madre, su hermana y su abuela, soñando con ser futbolista. “Mi madre tenía tres trabajos para mantenernos”, aseguraba. Se formó como músico en las calles de Carolina. Comenzó a publicar canciones de reguetón en la plataforma musical digital Soundcloud. El éxito fue progresivo pero irrefutable. Su primer disco, Afrodisíaco, se publicó en 2020 y contó con la colaboración de artistas como J Balvin, entre otros. Su gusto por la experimentación y la búsqueda se consolidó con la publicación de su segundo álbum de estudio, Vice versa. Su tercer disco, Saturno, lo llevó de gira por todo el mundo. A continuación, en febrero de 2022, lanzó su último sencillo con el productor Dímelo Flow con Farruko y la cantante María Becerra «Suelta», poco tiempo después, el 23 de febrero el cantante puertorriqueño sacaría a la luz el tracklist de su nuevo EP Trap Cake, Vol. 2 contando con colaboraciones de Future, Rvssian, Ankhal, Shenseea, Ty Dolla Sign. Éste saldría dos días después con sus nueve canciones, e incluiría diferentes géneros como trap, rap y hip hop.',        
@@ -181,7 +181,7 @@ export function cargarArtistas(){
     addArtista({
         nombre: 'QUEVEDO',
         imagen: 'https://i.pinimg.com/736x/6f/80/e5/6f80e5cd99bf1fb94f64dc6796055d56.jpg',
-        genero: 'REGUETON',
+        genero: 'REGGUETON',
         fecha: '2024-07-18',  
         hora: '14:45',
         descripcion: 'Pedro Luis Domínguez Quevedo nació el 7 de diciembre de 2001 en Madrid. Con un año de edad, viajó con su familia a Brasil donde vivieron durante cinco años hasta que decidieron volver a España. Actualmente está radicado en Las Palmas de Gran Canaria. Aún siendo un adolescente, se inició en el freestyle rap, cantando para familiares y amigos. En el año de la pandemia, ha contado, se sintió perdido y decidió refugiarse en la música. Abandonó la universidad y se metió en un estudio a componer. Su carrera profesional comenzó a despegar de la mano del productor independiente Alejandro Prendergast (1998, Canarias), conocido Linton, que carecía de una cantera variada de artistas pero que supo ver su talento entonces. Así se ha ido moviendo por los géneros urbanos como el trap, el reguetón o el hip-hop hasta publicar más de una treintena de canciones. En 2021, su sencillo Ahora y siempre ocupó el puesto 19 en el top 50 de Los más virales: Global Spotify. También el segundo puesto de Los 50 más virales de España. En 2022 su carrera dio un gran salto con la grabación de “Cayó la noche remix”, junto a artistas del archipiélago como La Pantera, Juseph, Bejo, Cruz Cafuné, Abhir Hathic y El Ima, que supera los 100 millones de reproducciones en YouTube. Este tema lideró la lista Los 50 más virales: España y Top 50 España, además de situarse en el top de Los 50 más virales: Global. ',        
