@@ -4,9 +4,18 @@ import * as servidor from './servidor.js';
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.render("paginaweb",{artistas: servidor.getArtistas()});
+  res.render('paginaweb', {artistas: servidor.getArtistas(0,3)});
 });
-  
+
+router.get('/servidor', (req, res) => {
+
+  const from = parseInt(req.query.from);
+  const to = parseInt(req.query.to);
+
+  const artistas = servidor.getArtistas(from,to);
+
+  res.render('artistas', {artistas: artistas});
+});
 
 //Sirve para obtener un cantante específico por su ID
 router.get("/masInfo/:id", (req, res) => {

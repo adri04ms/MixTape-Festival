@@ -2,7 +2,7 @@ const artistas = new Map();
 let nextId = 0;
 
 
-export function cargarArtistas(){
+export function loadSampleData(){
 
     addArtista({
         nombre: 'MELENDI',
@@ -319,8 +319,14 @@ export function addCancion(id,{nombre, duracion, lanzamiento, colaborador}) {
 }
 
 export function getArtistas(from, to) {
-    return [...artistas.values()];
+    let values = [...artistas.values()];
+    if (from !== undefined) {
+        return values.slice(from, to);
+    } else {
+        return values;
+    }
 }
+
 
 export function getArtista(id) {
     return artistas.get(id);
@@ -341,4 +347,4 @@ export function editArtista(id, { nombre, imagen, genero, fecha, hora, descripci
         artistas.set(id, artistToUpdate);
     }
 
-cargarArtistas();
+loadSampleData();
