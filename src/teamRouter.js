@@ -1,10 +1,11 @@
 import express from 'express';
+import { body, validationResult } from 'express-validator';
 import * as servidor from './servidor.js';
 
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.render('paginaweb', {artistas: servidor.getArtistas(0,3)});
+  res.render('paginaweb', {artistas: servidor.getArtistas(0,4)});
 });
 
 router.get('/servidor', (req, res) => {
@@ -29,13 +30,34 @@ router.get("/nuevo", (req, res) => {
   res.render("nuevoelemento");
 });  
  
+router.post('/newElemento', [
+  // Validar el campo título
+  body("nombre")
+    .notEmpty().withMessage('El campo título no debe estar vacío')
+    .matches(/^[A-Z][a-zA-Z ]*$/).withMessage('El campo título debe empezar con una letra mayúscula'),
 
-router.post("/newElemento", (req, res) => {
+  // Validar el campo descripción
+  body("descripcion")
+    .notEmpty().withMessage('El campo descripción no debe estar vacío')
+    .isLength({ min: 50, max: 500 }).withMessage('El campo descripción debe contener entre 50 y 500 caracteres'),
+
+  // Validar el campo URL de imagen
+  body("imagen")
+    .notEmpty().withMessage('El campo URL de imagen no debe estar vacío')
+    .isURL().withMessage('El campo URL de imagen debe ser una URL válida'),
+], (req, res) => {
+  // Manejar los errores de validación
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    // Si hay errores, renderizar nuevamente el formulario con los errores
+    return res.render("nuevoelemento", { errors: errors.array() });
+  }
+  else {
   let {nombre, imagen, genero, fecha, hora, descripcion } = req.body;
   let canciones = [];
   let artista = servidor.getArtista(servidor.addArtista({nombre, imagen, genero, fecha, hora, descripcion,canciones}));
   res.render("masinfo",{artista});
-});
+}});
 
 router.post("/nuevaCancion/:id", (req, res) => {
   let {nombre, duracion, lanzamiento, colaborador} = req.body;

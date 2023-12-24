@@ -39,37 +39,23 @@
             <div class="contenedor3 col-sm-1"></div>
             <div class="contenedor2 col-sm-7">
                 <h2><small>Nuevo cantante</small></h2>
-                <!-- Alertas -->
-                <div class="alertas">
-                    <div id="alertaNombre" class="alert alert-danger" style="display: none;" role="alert">
-                        Por favor, completa el nombre.
-                    </div>
-                    <div id="alertaImagen" class="alert alert-danger" style="display: none;" role="alert">
-                        Por favor, inserta la URL de la imagen.
-                    </div>
-                    <div id="alertaFecha" class="alert alert-danger" style="display: none;" role="alert">
-                        Por favor, especifica la fecha.
-                    </div>
-                    <div id="alertaHora" class="alert alert-danger" style="display: none;" role="alert">
-                        Por favor, especifica la hora.
-                    </div>
-                    <div id="alertaGenero" class="alert alert-danger" style="display: none;" role="alert">
-                        Por favor, selecciona un género.
-                    </div>
-                    <div id="alertaDescripcion" class="alert alert-danger" style="display: none;" role="alert">
-                        Por favor, completa la descripción.
-                    </div>
-                </div>
-
-
                 {{#artista.id}}    
-                <form role="form" class="formulario" action="/update/{{artista.id}}" method="post" onsubmit="return validarFormulario()">
+                <form role="form" class="formulario" action="/update/{{artista.id}}" method="post">
                 {{/artista.id}}
                 {{^artista.id}}
-                <form role="form" class="formulario" action="/newElemento" method="post" onsubmit="return validarFormulario()">
+                <form role="form" class="formulario" action="/newElemento" method="post">
                 {{/artista.id}}
 
                     <table class="default">
+                        <tr>
+                            <td colspan="2" id="errorMessages">
+                            {{#errors}}
+                            <p class="error">{{msg}}</p>
+                            {{/errors}}
+                            {{^errors}}
+                            {{/errors}}
+                            </td>
+                        </tr>
                         <tr>
                             <td><label for="nombre">NOMBRE</label></td>
                             {{#artista.nombre}}
@@ -220,38 +206,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        function mostrarAlerta(id) {
-            document.getElementById(id).style.display = 'block';
-            setTimeout(function () {
-                document.getElementById(id).style.display = 'none';
-            }, 4000);
-        }
-
-        function validarFormulario() {
-            var nombre = document.getElementById('nombre').value;
-            var imagen = document.getElementById('imagen').value;
-            var genero = document.getElementById('genero').value;
-            var fecha = document.getElementById('fecha').value;
-            var hora = document.getElementById('hora').value;
-            var descripcion = document.getElementById('descripcion').value;
-
-            if (nombre === '' || imagen === '' || genero === '' || fecha === '' || hora === '' || descripcion === '') {
-                // Muestra las alertas
-                if (nombre === '') mostrarAlerta('alertaNombre');
-                if (imagen === '') mostrarAlerta('alertaImagen');
-                if (genero === '') mostrarAlerta('alertaGenero');
-                if (fecha === '') mostrarAlerta('alertaFecha');
-                if (hora === '') mostrarAlerta('alertaHora');
-                if (descripcion === '') mostrarAlerta('alertaDescripcion');
-
-                return false;
-            }
-
-            return true; // Envía el formulario si todos los campos están llenos
-        }
-    </script>
-
 </body>
 </html>
