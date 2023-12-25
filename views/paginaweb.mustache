@@ -1,7 +1,7 @@
 <!--el archivo html ahora se llama mustache, es lo mismo  -->
 <!-- aqui voy a tener la plantilla del cantante y cuando renderice se me pone la información especifica de ese cantante en la plantilla -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <title>MIXTAPE FESTIVAL</title>
@@ -28,7 +28,19 @@
     </section>
     <br>
     <section>
+
         <div class="container text-center">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Barra de búsqueda -->
+                    <form class="search-form">
+                        <input type="text" id="searchInput" placeholder="Buscar cantante...">
+                        <button type="button" onclick="search()">Buscar</button>
+                        <button type="button" onclick="resetSearch()">Mostrar Todos</button>
+                    </form>
+                </div>
+            </div>
+            <br>
             <div class="row">
                 <div class="artistas col-12">
                     <p>ARTISTAS INVITADOS</p> <!--PRIMERA FILA DEL GRID-->
