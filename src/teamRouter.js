@@ -46,18 +46,22 @@ router.post('/newElemento', [
     .notEmpty().withMessage('El campo URL de imagen no debe estar vacío')
     .isURL().withMessage('El campo URL de imagen debe ser una URL válida'),
 ], (req, res) => {
-  // Manejar los errores de validación
-  const errors = validationResult(req);
+  // Get the values entered by the user
+  let { nombre, imagen, genero, fecha, hora, descripcion } = req.body;
+
+  // Validate the form fields
+  let errors = validationResult(req);
+
   if (!errors.isEmpty()) {
-    // Si hay errores, renderizar nuevamente el formulario con los errores
-    return res.render("nuevoelemento", { errors: errors.array() });
+    // If there are errors, render the form again with the entered values and error messages
+    return res.render("nuevoelemento", { artista: { nombre, imagen, genero, fecha, hora, descripcion }, errors: errors.array() });
+  } else {
+    // Process the form data and save it to the database
+    let canciones = [];
+    let artista = servidor.getArtista(servidor.addArtista({ nombre, imagen, genero, fecha, hora, descripcion, canciones }));
+    res.render("masinfo", { artista });
   }
-  else {
-  let {nombre, imagen, genero, fecha, hora, descripcion } = req.body;
-  let canciones = [];
-  let artista = servidor.getArtista(servidor.addArtista({nombre, imagen, genero, fecha, hora, descripcion,canciones}));
-  res.render("masinfo",{artista});
-}});
+});
 
 router.post("/nuevaCancion/:id", (req, res) => {
   let {nombre, duracion, lanzamiento, colaborador} = req.body;
