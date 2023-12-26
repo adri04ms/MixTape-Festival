@@ -347,45 +347,4 @@ export function editArtista(id, { nombre, imagen, genero, fecha, hora, descripci
         artistas.set(id, artistToUpdate);
     }
 
-export function escribirTexto(texto, elemento) {
-    var i = 0;
-    var velocidad = 100;
-    var intervalo = setInterval(function () {
-        if (i < texto.length) {
-            elemento.innerHTML += texto.charAt(i);
-            i++;
-        } else {
-            clearInterval(intervalo);
-        }
-    }, velocidad);
-}
-    
-export function cambiarColor(titulo) {
-    if (titulo.style.color === "black") {
-        titulo.style.color = "white";
-    } else {
-        titulo.style.color = "black";
-    }
-}
-    
-export function efectoImagen() {
-    var contenedor = document.querySelector('#artist-container');
-    
-    contenedor.addEventListener('mouseover', function (event) {
-        if (event.target.tagName === 'IMG') {
-            event.target.style.transform = 'scale(1.1)';
-        }
-    });
-    
-    contenedor.addEventListener('mouseout', function (event) {
-        if (event.target.tagName === 'IMG') {
-            event.target.style.transform = 'scale(1)';
-        }
-    });
-}
-    
-export function toggleCorazon(button) {
-    button.classList.toggle('active');
-}
-
 loadSampleData();
