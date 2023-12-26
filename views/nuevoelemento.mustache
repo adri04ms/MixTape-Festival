@@ -46,16 +46,15 @@
                 <form role="form" class="formulario" action="/newElemento" method="post">
                 {{/artista.id}}
 
-                    <table class="default">
+                    <table class="default" >
+                    {{#errors}}
                         <tr>
-                            <td colspan="2" id="errorMessages">
-                            {{#errors}}
+                            <td colspan="2" id="errorMessages" class="errores">
                             <p class="error">{{msg}}</p>
-                            {{/errors}}
-                            {{^errors}}
-                            {{/errors}}
                             </td>
                         </tr>
+                    {{/errors}}
+                        <tr><td><br></td></tr>
                         <tr>
                             <td><label for="nombre">NOMBRE</label></td>
                             {{#artista.nombre}}

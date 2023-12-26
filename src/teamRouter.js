@@ -136,6 +136,41 @@ router.post("/update/:id", [
   if (!errors.isEmpty()) {
     // If there are errors, render the form again with the entered values and error messages
     let id = req.params.id
+    let artista = servidor.getArtista(req.params.id);
+    if (artista.genero === "POP ESPAÑOL"){
+      artista.genero = {POP_ESPANYOL : true}
+    }
+    else if (artista.genero === "POP"){
+      artista.genero = {POP : true}
+    }
+    else if (artista.genero === "REGGUETON"){
+      artista.genero = {REGGUETON : true}
+    }
+    else if (artista.genero === "RAP"){
+      artista.genero = {RAP : true}
+    }
+    else if (artista.genero === "ROCK"){
+      artista.genero = {ROCK : true}
+    }
+    else if (artista.genero === "INDIE"){
+      artista.genero = {INDIE: true}
+    }
+    else if (artista.genero === "ALTERNATIVO"){
+      artista.genero = {ALTERNATIVO : true}
+    }
+    else if (artista.genero === "HIP HOP"){
+      artista.genero = {HIP_HOP : true}
+    }
+    else if (artista.genero === "METAL"){
+      artista.genero = {METAL: true}
+    }
+    else if (artista.genero === "JAZZ"){
+      artista.genero = {JAZZ : true}
+    }
+    else if (artista.genero === "TRAP LATINO"){
+      artista.genero = {TRAP_LATINO: true}
+    }
+    genero = artista.genero;
     return res.render("nuevoelemento", {artista:{id, nombre, imagen, genero, fecha, hora, descripcion}, errors: errors.array() });
   } else {
     // Process the form data and save it to the database
