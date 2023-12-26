@@ -111,12 +111,40 @@ router.get("/editar/:id", (req, res) => {
 }); 
 
 
-router.post("/update/:id", (req, res) => {
+router.post("/update/:id", [
+  // Validar el campo título
+  body("nombre")
+    .notEmpty().withMessage('El campo título no debe estar vacío')
+    .matches(/^[A-Z][a-zA-Z ]*$/).withMessage('El campo título debe empezar con una letra mayúscula'),
+
+  // Validar el campo descripción
+  body("descripcion")
+    .notEmpty().withMessage('El campo descripción no debe estar vacío')
+    .isLength({ min: 50, max: 500 }).withMessage('El campo descripción debe contener entre 50 y 500 caracteres'),
+
+  // Validar el campo URL de imagen
+  body("imagen")
+    .notEmpty().withMessage('El campo URL de imagen no debe estar vacío')
+    .isURL().withMessage('El campo URL de imagen debe ser una URL válida'),
+], (req, res) => {
+  // Get the values entered by the user
   let { nombre, imagen, genero, fecha, hora, descripcion } = req.body;
-  let artista = ({nombre, imagen, genero, fecha, hora, descripcion});
-  servidor.editArtista(req.params.id,artista);
-  artista = servidor.getArtista(req.params.id);
-  res.render("masInfo",{artista});
+
+  // Validate the form fields
+  let errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    // If there are errors, render the form again with the entered values and error messages
+    let id = req.params.id
+    return res.render("nuevoelemento", {artista:{id, nombre, imagen, genero, fecha, hora, descripcion}, errors: errors.array() });
+  } else {
+    // Process the form data and save it to the database
+    let { nombre, imagen, genero, fecha, hora, descripcion } = req.body;
+    let artista = ({nombre, imagen, genero, fecha, hora, descripcion});
+    servidor.editArtista(req.params.id,artista);
+    artista = servidor.getArtista(req.params.id);
+    res.render("masInfo",{artista});
+  }
 });
 
 router.get("/masInfo/:id/borrar", (req, res) => {
