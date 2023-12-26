@@ -53,14 +53,14 @@
             <br>
             <div class="row" id="artist-container">
                 {{#artistas}}
-                <div class="cantante col-12 col-md-6 col-lg-3"> <!--CADA ARTISTA OCUPA 3 COLUMNAS (PANTALLA GRANDE), 6 COLUMNAS (PANTALLA MEDIANA), 12 COLUMNAS (PANTALLA PEQUEÑA)-->
+                <<div class="cantante col-12 col-md-6 col-lg-3" data-id="{{id}}">
                     <a href="/masInfo/{{id}}">
                         <p>{{nombre}}</p>
                     </a>
                     <a href="/masInfo/{{id}}"><img src="{{imagen}}" alt="{{nombre}}"></a>
                     <div class="generoyfav">
-                    <h3>{{genero}}</h3>
-                    <button class="btn btn-corazon {{#esFavorito}}active{{/esFavorito}}" onclick=toggleCorazon(this)>&#x2665;</button>
+                        <h3>{{genero}}</h3>
+                        <button class="btn btn-corazon {{#esFavorito}}active{{/esFavorito}}" onclick="toggleCorazon(this)" data-id="{{id}}">&#x2665;</button>
                     </div>
                 </div>
                 {{/artistas}}
