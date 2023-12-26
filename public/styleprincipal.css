@@ -35,8 +35,6 @@ footer { /*PIE DE PAGINA*/
     color: white;
 }
 
-
-
 .artistas{ /*FONDO DE LA FILA DE ARTISTAS INVITADOS*/
     background-color: white;
 }
@@ -84,6 +82,53 @@ footer { /*PIE DE PAGINA*/
     font-family: fantasy;
     font-size: 2.5vw;
   }
+
+  .favoritos-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #f8f9fa;
+    padding: 20px;
+    overflow-y: auto;
+    border-left: 1px solid #ccc;
+}
+
+.favoritos-sidebar h2 {
+    text-align: center;
+}
+
+.favoritos-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.favoritos-sidebar li {
+    margin-bottom: 10px;
+}
+
+.btn-corazon {
+    width: 40px;
+    height: 40px;
+    background-color: transparent; /* Establecer el fondo blanco */
+    border: none;
+    font-size: 45px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Agregar transición para el color de fondo */
+    margin-top: -9%;
+}
+
+.btn-corazon.active {
+    color: red;
+}
+
+.generoyfav{
+    display: flex;
+    justify-content: center;
+}
+
 @media only screen and (max-width: 767px) { /*CONDICIONES PARA PANTALLAS MENORES A 767PX DE ANCHO*/
     .artistas p { /*FORMATO DE ARTISTAS INVITADOS*/
         font-weight: bold;
