@@ -124,11 +124,4 @@ router.get("/masInfo/:id/borrar", (req, res) => {
   res.redirect("/"); 
 });
 
-router.get("/", (req, res) => {
-  servidor.escribirTexto("The best festival of your entire life", document.querySelector(".cabecera p"));
-  servidor.setInterval(cambiarColor, 300);
-  servidor.efectoImagen();
-  res.render('paginaweb', { artistas: servidor.getArtistas(0, 4) });
-});
-
 export default router;
