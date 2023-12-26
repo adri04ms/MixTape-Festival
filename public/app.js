@@ -90,6 +90,27 @@ function efectoImagen() {
         }
     });
 }
+
 function toggleCorazon(button) {
-button.classList.toggle('active');
+    const cantanteDiv = button.closest('.cantante');
+    const cantanteId = cantanteDiv.getAttribute('data-id');
+    const favoritosLista = document.getElementById('favoritos-lista');
+    const cantanteNombre = cantanteDiv.querySelector('p').textContent;
+
+    // Verifica si el botón tiene la clase 'active'
+    const esFavorito = button.classList.toggle('active');
+
+    // Encuentra el elemento existente en la lista de favoritos
+    const favoritoItem = document.querySelector(`#favoritos-lista li[data-id="${cantanteId}"]`);
+
+    if (esFavorito && !favoritoItem) {
+        // Añade el cantante a la lista de favoritos
+        const nuevoFavorito = document.createElement('li');
+        nuevoFavorito.textContent = cantanteNombre;
+        nuevoFavorito.setAttribute('data-id', cantanteId);
+        favoritosLista.appendChild(nuevoFavorito);
+    } else if (!esFavorito && favoritoItem) {
+        // Elimina el cantante de la lista de favoritos
+        favoritosLista.removeChild(favoritoItem);
+    }
 }
