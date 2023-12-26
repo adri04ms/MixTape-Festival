@@ -14,8 +14,8 @@
 </head>
 <body>
     <section>
-        <div class="favoritos-sidebar">
-            <h2>Favoritos</h2>
+        <div class="favoritos-sidebar hidden" id="favoritosSidebar">
+            <h2>FAVORITOS</h2>
             <ul id="favoritos-lista"></ul>
         </div>
     </section>
@@ -23,7 +23,7 @@
         <div class="cabecera">
             <div class="container text-center">
                 <div class="row">
-                    <div class="col-10">
+                    <div class="col-12">
                         <h1>MIXTAPE FESTIVAL</h1> <!-- TITULO -->
                         <p></p>
                     </div>
@@ -35,7 +35,8 @@
     <section>
         <div class="container text-center">
             <div class="row">
-                <div class="col-10">
+                <div class="col-12">
+                   <button class="favbtn" id="FavoritosBtn" onclick="toggleFavoritesSidebar()">Mostrar Artistas Favoritos</button>
                     <!-- Barra de búsqueda -->
                     <form class="search-form">
                         <input type="text" id="searchInput" placeholder="Buscar cantante...">
@@ -46,14 +47,14 @@
             </div>
             <br>
             <div class="row">
-                <div class="artistas col-10">
+                <div class="artistas col-12">
                     <p>ARTISTAS INVITADOS</p> <!--PRIMERA FILA DEL GRID-->
                 </div>
             </div>
             <br>
             <div class="row" id="artist-container">
                 {{#artistas}}
-                <<div class="cantante col-12 col-md-6 col-lg-3" data-id="{{id}}">
+                <<div class="cantante col-12 col-md-6 col-lg-4" data-id="{{id}}">
                     <a href="/masInfo/{{id}}">
                         <p>{{nombre}}</p>
                     </a>
@@ -104,7 +105,5 @@
     <footer class="container-fluid text-center">
         <h5>Albacete es internationally que no os engañen</h5> <!--PIE DE PAGINA-->
     </footer>
-
 </body>
-
 </html>
