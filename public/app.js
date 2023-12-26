@@ -114,3 +114,14 @@ function toggleCorazon(button) {
         favoritosLista.removeChild(favoritoItem);
     }
 }
+
+function toggleFavoritesSidebar() {
+    const favoritosSidebar = document.getElementById('favoritosSidebar');
+
+    // Cambiar el estilo de la barra lateral para mostrar/ocultar
+    favoritosSidebar.style.display = (favoritosSidebar.style.display === 'none') ? 'block' : 'none';
+
+    // Cambiar el texto del botón según el estado de la barra lateral
+    const isOpen = (favoritosSidebar.style.display !== 'none');
+    document.getElementById('FavoritosBtn').innerText = isOpen ? 'Ocultar Artistas Favoritos' : 'Mostrar Artistas Favoritos';
+}
