@@ -1,49 +1,34 @@
-const NUM_RESULTS = 4;
-let loadMoreRequests = 0;
+import express from 'express';
+import mustacheExpress from 'mustache-express';
+import bodyParser from 'body-parser';
+import teamRouter from './teamRouter.js';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
 
-async function loadMore() {
-    const from = (loadMoreRequests + 1) * NUM_RESULTS;
-    const to = from + NUM_RESULTS;
+const app = express();
 
-    try {
-        const response = await fetch(`servidor?from=${from}&to=${to}`);
-        const newArtists = await response.text();
+//Obtener el directorio actual (usando ESM)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-        const artistContainer = document.getElementById("artist-container");
-        artistContainer.innerHTML += newArtists;
+//Sirve para que la web pueda usar archivos de la carpeta Public
+app.use(express.static(join(__dirname, '/../public')));
 
-        loadMoreRequests++;
-    } catch (error) {
-        console.error('Error al cargar artistas:', error);
-    }
-}
+//Defino el puerto en el que va a estar la pagina
+const port = process.env.PORT || 3000;
 
+//Sirve para permitir a node analizar datos de formularios cuando está en true
+app.use(bodyParser.urlencoded({ extended: true }));
 
-function search() {
-    var input = document.getElementById('searchInput').value.trim().toLowerCase();
-    var artistas = document.getElementsByClassName('cantante');
+//Agregar el Router
+app.use('/', teamRouter);
 
-    for (var i = 0; i < artistas.length; i++) {
-        var nombre = artistas[i].getElementsByTagName('p')[0].innerText.trim().toLowerCase();
-        var genero = artistas[i].getElementsByTagName('h3')[0].innerText.trim().toLowerCase();
+//Configuración del mustache
+app.set('views', join(__dirname, '/../views'));
+app.set('view engine', 'mustache');
+app.engine('mustache', mustacheExpress());
 
-        // Mostrar u ocultar el elemento según si coincide con la búsqueda en nombre o género
-        if (nombre.includes(input) || genero.includes(input)) {
-            artistas[i].style.display = 'block';
-        } else {
-            artistas[i].style.display = 'none';
-        }
-    }
-}
-function resetSearch() {
-    var artistas = document.getElementsByClassName('cantante');
-
-    for (var i = 0; i < artistas.length; i++) {
-        artistas[i].style.display = 'block';
-    }
-}
-
-document.addEventListener("DOMContentLoaded", function () {
+function moverSubtitulo () {
     var subtitulo = "The best festival of your entire life";
     var velocidad = 100;
     var elemento = document.querySelector(".cabecera p");
@@ -73,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(cambiarColor, 300);
 
     efectoImagen();
-});
+};
 
 function efectoImagen() {
     var contenedor = document.querySelector('#artist-container');
@@ -90,6 +75,13 @@ function efectoImagen() {
         }
     });
 }
+
 function toggleCorazon(button) {
 button.classList.toggle('active');
 }
+
+//Pongo la pagina a escuchar en el puerto 3000
+app.listen(port, () => {
+    console.log(`El servidor está funcionando en el puerto ${port}`);
+});
+
