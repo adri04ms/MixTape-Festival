@@ -83,7 +83,7 @@ footer { /*PIE DE PAGINA*/
     font-size: 2.5vw;
   }
 
-  .favoritos-sidebar {
+  .favoritos-sidebar { /*FORMATO FAVORITOS*/
     position: fixed;
     top: 0;
     right: 0;
@@ -108,7 +108,7 @@ footer { /*PIE DE PAGINA*/
     margin-bottom: 10px;
 }
 
-.btn-corazon {
+.btn-corazon { /*FORMATO BOTON FAVORITO*/
     width: 40px;
     height: 40px;
     background-color: transparent; /* Establecer el fondo blanco */
@@ -124,7 +124,7 @@ footer { /*PIE DE PAGINA*/
     color: red;
 }
 
-.generoyfav{
+.generoyfav{ /*DISPOSICION GENERO Y BOTON CORAZON*/
     display: flex;
     justify-content: center;
 }
