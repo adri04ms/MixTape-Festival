@@ -82,30 +82,63 @@ footer { /*PIE DE PAGINA*/
     font-family: fantasy;
     font-size: 2.5vw;
   }
-
-  .favoritos-sidebar { /*FORMATO FAVORITOS*/
+.hidden {
+    display: none;
+}
+.favoritos-sidebar {
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
-    width: 200px;
-    height: 100%;
-    background-color: #f8f9fa;
+    width: 250px; /* Ajusta el ancho según sea necesario */
+    height: 100%; /* O ajusta la altura según sea necesario */
+    background: rgb(108,11,100);
+    background: linear-gradient(90deg, rgba(108,11,100,1) 0%, rgba(81,10,84,1) 46%, rgba(22,0,21,1) 100%);
     padding: 20px;
-    overflow-y: auto;
-    border-left: 1px solid #ccc;
-}
-
-.favoritos-sidebar h2 {
+    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.1); /* Sombra en el lado izquierdo */
+    z-index: 1000; /* Ajusta según sea necesario */
     text-align: center;
 }
 
-.favoritos-sidebar ul {
-    list-style-type: none;
-    padding: 0;
+.favbtn{
+    background-color: purple;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px; /* Ajusta el valor según desees esquinas más o menos redondas */
+    cursor: pointer;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.favoritos-sidebar li {
+.favoritos-sidebar.open {
+    display: block;
+}
+
+.favoritos-sidebar h2 {
     margin-bottom: 10px;
+    background-color: white;
+}
+
+.favoritos-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+.favoritos-sidebar ul li {
+    margin-bottom: 10px;
+}
+
+/* Añade el siguiente estilo para ocultar el scrollbar vertical cuando no sea necesario */
+body {
+    overflow-y: scroll;
+}
+
+/* Cambia el estilo de la clase 'open' para mostrar la barra lateral */
+.favoritos-sidebar.open {
+    display: block;
 }
 
 .btn-corazon { /*FORMATO BOTON FAVORITO*/
@@ -117,7 +150,7 @@ footer { /*PIE DE PAGINA*/
     color: white;
     cursor: pointer;
     transition: color 0.3s ease; /* Agregar transición para el color de fondo */
-    margin-top: -9%;
+    margin-top: -6%;
 }
 
 .btn-corazon.active {
