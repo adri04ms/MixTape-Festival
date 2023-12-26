@@ -42,3 +42,54 @@ function resetSearch() {
         artistas[i].style.display = 'block';
     }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    var subtitulo = "The best festival of your entire life";
+    var velocidad = 100;
+    var elemento = document.querySelector(".cabecera p");
+
+    function escribirTexto(texto, elemento) {
+        var i = 0;
+        var intervalo = setInterval(function () {
+            if (i < texto.length) {
+                elemento.innerHTML += texto.charAt(i);
+                i++;
+            } else {
+                clearInterval(intervalo);
+            }
+        }, velocidad);
+    }
+    escribirTexto(subtitulo, elemento);
+
+    var titulo = document.querySelector("h1");
+
+    function cambiarColor() {
+        if (titulo.style.color === "black") {
+            titulo.style.color = "white";
+        } else {
+            titulo.style.color = "black";
+        }
+    }
+    setInterval(cambiarColor, 300);
+
+    efectoImagen();
+});
+
+function efectoImagen() {
+    var contenedor = document.querySelector('#artist-container');
+
+    contenedor.addEventListener('mouseover', function (event) {
+        if (event.target.tagName === 'IMG') {
+            event.target.style.transform = 'scale(1.1)';
+        }
+    });
+
+    contenedor.addEventListener('mouseout', function (event) {
+        if (event.target.tagName === 'IMG') {
+            event.target.style.transform = 'scale(1)';
+        }
+    });
+}
+function toggleCorazon(button) {
+button.classList.toggle('active');
+}
