@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-10">
                         <h1>MIXTAPE FESTIVAL</h1> <!-- TITULO -->
-                        <p>The best festival of your entire life</p>
+                        <p></p>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                     <a href="/masInfo/{{id}}"><img src="{{imagen}}" alt="{{nombre}}"></a>
                     <div class="generoyfav">
                     <h3>{{genero}}</h3>
-                    <button class="btn btn-corazon {{#esFavorito}}active{{/esFavorito}}" onclick="toggleCorazon()">&#x2665;</button>
+                    <button class="btn btn-corazon {{#esFavorito}}active{{/esFavorito}}" onclick=toggleCorazon(this)>&#x2665;</button>
                     </div>
                 </div>
                 {{/artistas}}
