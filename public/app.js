@@ -118,10 +118,16 @@ function toggleCorazon(button) {
 function toggleFavoritesSidebar() {
     const favoritosSidebar = document.getElementById('favoritosSidebar');
 
-    // Cambiar el estilo de la barra lateral para mostrar/ocultar
-    favoritosSidebar.style.display = (favoritosSidebar.style.display === 'none') ? 'block' : 'none';
+    // Toggle the 'hidden' class to show/hide the sidebar
+    favoritosSidebar.classList.toggle('hidden');
 
-    // Cambiar el texto del botón según el estado de la barra lateral
-    const isOpen = (favoritosSidebar.style.display !== 'none');
-    document.getElementById('FavoritosBtn').innerText = isOpen ? 'Ocultar Artistas Favoritos' : 'Mostrar Artistas Favoritos';
+    // Change the button text based on the sidebar visibility
+    const isOpen = !favoritosSidebar.classList.contains('hidden');
+    const buttonText = isOpen ? 'Ocultar Artistas Favoritos' : 'Mostrar Artistas Favoritos';
+
+    // Cambia el texto del botón
+    document.getElementById('FavoritosBtn').innerText = buttonText;
+    
+    // Muestra u oculta la barra lateral
+    favoritosSidebar.style.display = isOpen ? 'block' : 'none';
 }
