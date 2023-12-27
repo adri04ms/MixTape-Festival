@@ -26,37 +26,45 @@ router.get("/masInfo/:id", (req, res) => {
 
  
 router.get("/nuevo", (req, res) => {
-  // req lo que enviamos - res lo que express nos responde
   res.render("nuevoelemento");
 });  
  
 router.post('/newElemento', [
-  // Validar el campo título
+  // Validar el nombre
   body("nombre")
-    .notEmpty().withMessage('El campo título no debe estar vacío')
-    .matches(/^[A-Z][a-zA-Z ]*$/).withMessage('El campo título debe empezar con una letra mayúscula'),
+    .notEmpty().withMessage('El nombre no debe estar vacío')
+    .matches(/^[A-Z][a-zA-Z ]*$/).withMessage('El nombre debe empezar con una letra mayúscula'),
 
-  // Validar el campo descripción
+  // Validar ladescripción
   body("descripcion")
-    .notEmpty().withMessage('El campo descripción no debe estar vacío')
-    .isLength({ min: 50, max: 500 }).withMessage('El campo descripción debe contener entre 50 y 500 caracteres'),
+    .notEmpty().withMessage('La descripción no debe estar vacío')
+    .isLength({ min: 50, max: 500 }).withMessage('La descripción debe contener entre 50 y 500 caracteres'),
 
-  // Validar el campo URL de imagen
+  // Validar la URL de imagen
   body("imagen")
-    .notEmpty().withMessage('El campo URL de imagen no debe estar vacío')
-    .isURL().withMessage('El campo URL de imagen debe ser una URL válida'),
-], (req, res) => {
-  // Get the values entered by the user
-  let { nombre, imagen, genero, fecha, hora, descripcion } = req.body;
+    .notEmpty().withMessage('El URL de imagen no debe estar vacío')
+    .isURL().withMessage('El URL de imagen debe ser una URL válida'),
 
-  // Validate the form fields
+  // Validar el genero
+  body("genero")
+    .notEmpty().withMessage('El género no debe estar vacío'),
+
+  // Validar fecha
+  body("fecha")
+  .notEmpty().withMessage('La fecha no debe estar vacía'),
+
+  // Validar el genero
+  body("hora")
+  .notEmpty().withMessage('La hora no debe estar vacía')
+
+], (req, res) => {
+
+  let { nombre, imagen, genero, fecha, hora, descripcion } = req.body;
   let errors = validationResult(req);
 
   if (!errors.isEmpty()) {
-    // If there are errors, render the form again with the entered values and error messages
     return res.render("nuevoelemento", { artista: { nombre, imagen, genero, fecha, hora, descripcion }, errors: errors.array() });
   } else {
-    // Process the form data and save it to the database
     let canciones = [];
     let artista = servidor.getArtista(servidor.addArtista({ nombre, imagen, genero, fecha, hora, descripcion, canciones }));
     res.render("masinfo", { artista });
@@ -112,31 +120,39 @@ router.get("/editar/:id", (req, res) => {
 
 
 router.post("/update/:id", [
-  // Validar el campo título
+  // Validar el nombre
   body("nombre")
-    .notEmpty().withMessage('El campo título no debe estar vacío')
-    .matches(/^[A-Z][a-zA-Z ]*$/).withMessage('El campo título debe empezar con una letra mayúscula'),
+    .notEmpty().withMessage('El nombre no debe estar vacío')
+    .matches(/^[A-Z][a-zA-Z ]*$/).withMessage('El nombre debe empezar con una letra mayúscula'),
 
-  // Validar el campo descripción
+  // Validar ladescripción
   body("descripcion")
-    .notEmpty().withMessage('El campo descripción no debe estar vacío')
-    .isLength({ min: 50, max: 500 }).withMessage('El campo descripción debe contener entre 50 y 500 caracteres'),
+    .notEmpty().withMessage('La descripción no debe estar vacío')
+    .isLength({ min: 50, max: 500 }).withMessage('La descripción debe contener entre 50 y 500 caracteres'),
 
-  // Validar el campo URL de imagen
+  // Validar la URL de imagen
   body("imagen")
-    .notEmpty().withMessage('El campo URL de imagen no debe estar vacío')
-    .isURL().withMessage('El campo URL de imagen debe ser una URL válida'),
+    .notEmpty().withMessage('El URL de imagen no debe estar vacío')
+    .isURL().withMessage('El URL de imagen debe ser una URL válida'),
+
+  // Validar el genero
+  body("genero")
+    .notEmpty().withMessage('El género no debe estar vacío'),
+
+  // Validar fecha
+  body("fecha")
+  .notEmpty().withMessage('La fecha no debe estar vacía'),
+
+  // Validar el genero
+  body("hora")
+  .notEmpty().withMessage('La hora no debe estar vacía')
+
 ], (req, res) => {
-  // Get the values entered by the user
   let { nombre, imagen, genero, fecha, hora, descripcion } = req.body;
-
-  // Validate the form fields
+  let artista = ({ nombre, imagen, genero, fecha, hora, descripcion });
   let errors = validationResult(req);
-
+  let id = req.params.id;
   if (!errors.isEmpty()) {
-    // If there are errors, render the form again with the entered values and error messages
-    let id = req.params.id
-    let artista = servidor.getArtista(req.params.id);
     if (artista.genero === "POP ESPAÑOL"){
       artista.genero = {POP_ESPANYOL : true}
     }
