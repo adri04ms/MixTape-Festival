@@ -28,13 +28,14 @@ function search() {
         var genero = artistas[i].getElementsByTagName('h3')[0].innerText.trim().toLowerCase();
 
         // Mostrar u ocultar el elemento según si coincide con la búsqueda en nombre o género
-        if (nombre.includes(input) || genero.includes(input)) {
+        if (input === '' || nombre.includes(input) || genero.includes(input)) {
             artistas[i].style.display = 'block';
         } else {
             artistas[i].style.display = 'none';
         }
     }
 }
+
 function resetSearch() {
     var artistas = document.getElementsByClassName('cantante');
 
