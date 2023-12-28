@@ -131,3 +131,26 @@ function toggleFavoritesSidebar() {
     // Muestra u oculta la barra lateral
     favoritosSidebar.style.display = isOpen ? 'block' : 'none';
 }
+
+function mostrarAlerta(id) {
+    document.getElementById(id).style.display = 'block';
+}
+function validarFormulario() {
+    var nombre = document.getElementById('nombre').value;
+    var imagen = document.getElementById('imagen').value;
+    var genero = document.getElementById('genero').value;
+    var fecha = document.getElementById('fecha').value;
+    var hora = document.getElementById('hora').value;
+    var descripcion = document.getElementById('descripcion').value;
+    if (nombre === '' || imagen === '' || genero === '' || fecha === '' || hora === '' || descripcion === '') {
+        // Muestra las alertas
+        if (nombre === '') mostrarAlerta('alertaNombre');
+        if (imagen === '') mostrarAlerta('alertaImagen');
+        if (genero === '') mostrarAlerta('alertaGenero');
+        if (fecha === '') mostrarAlerta('alertaFecha');
+        if (hora === '') mostrarAlerta('alertaHora');
+        if (descripcion === '') mostrarAlerta('alertaDescripcion');
+        return false;
+    }
+    return true; // Envía el formulario si todos los campos están llenos
+}
