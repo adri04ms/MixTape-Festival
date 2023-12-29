@@ -134,24 +134,40 @@ function toggleFavoritesSidebar() {
 }
 
 function mostrarAlerta(id) {
-    document.getElementById(id).style.display = 'block';
+    var alerta = document.getElementById(id);
+    alerta.style.display = 'block';
+    setTimeout(function() {
+        alerta.style.display = 'none';
+    }, 5000);
 }
+
 function validarFormulario() {
-    var nombre = document.getElementById('nombre').value;
-    var imagen = document.getElementById('imagen').value;
-    var genero = document.getElementById('genero').value;
-    var fecha = document.getElementById('fecha').value;
-    var hora = document.getElementById('hora').value;
-    var descripcion = document.getElementById('descripcion').value;
-    if (nombre === '' || imagen === '' || genero === '' || fecha === '' || hora === '' || descripcion === '') {
-        // Muestra las alertas
-        if (nombre === '') mostrarAlerta('alertaNombre');
-        if (imagen === '') mostrarAlerta('alertaImagen');
-        if (genero === '') mostrarAlerta('alertaGenero');
-        if (fecha === '') mostrarAlerta('alertaFecha');
-        if (hora === '') mostrarAlerta('alertaHora');
-        if (descripcion === '') mostrarAlerta('alertaDescripcion');
-        return false;
-    }
-    return true; // Envía el formulario si todos los campos están llenos
+var nombre = document.getElementById('nombre').value;
+var imagen = document.getElementById('imagen').value;
+var genero = document.getElementById('genero').value;
+var fecha = document.getElementById('fecha').value;
+var hora = document.getElementById('hora').value;
+var descripcion = document.getElementById('descripcion').value;
+
+// Validaciones adicionales
+var regexLetraMayuscula = /^[A-Z]/;
+
+if (nombre === '' || !regexLetraMayuscula.test(nombre) || !esURLValida(imagen) || imagen === '' || genero === '' || fecha === '' || hora === '' || descripcion === '' || descripcion.length < 50 || descripcion.length > 500) {
+    if (nombre === '' || !regexLetraMayuscula.test(nombre)) mostrarAlerta('alertaNombre');
+    if (descripcion === '' || descripcion.length < 50 || descripcion.length > 500) mostrarAlerta('alertaDescripcion');
+    if (!esURLValida(imagen) || imagen === '') mostrarAlerta('alertaImagen');
+    if (genero === '') mostrarAlerta('alertaGenero');
+    if (fecha === '') mostrarAlerta('alertaFecha');
+    if (hora === '') mostrarAlerta('alertaHora');
+    return false;
+}
+
+return true; // Envía el formulario si todas las validaciones son exitosas
+}
+
+function esURLValida(url) {
+// Esta función puede ser más compleja dependiendo de los requisitos específicos
+// Aquí, simplemente verifica si es una URL válida
+var regexURL = /^(ftp|http|https):\/\/[^ "]+$/;
+return regexURL.test(url);
 }
