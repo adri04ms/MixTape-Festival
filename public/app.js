@@ -146,6 +146,25 @@ var regexURL = /^(ftp|http|https):\/\/[^ "]+$/;
 return regexURL.test(url);
 }
 
+function filtrarPorNombre() {
+    // Obtener el valor ingresado por el usuario
+    var filtro = document.getElementById('busqueda').value.toLowerCase();
+    
+    // Obtener la lista de elementos en el mapa
+    var contenedorArtistas = document.getElementById('artist-container');
+    var artistas = contenedorArtistas.getElementsByClassName('cantante');
+
+    // Iterar sobre los elementos y mostrar/ocultar según el filtro
+    for (var i = 0; i < artistas.length; i++) {
+        var nombre = artistas[i].getElementsByTagName('p')[0].innerText.toLowerCase();
+        if (nombre.includes(filtro)) {
+            artistas[i].style.display = 'block';
+        } else {
+            artistas[i].style.display = 'none';
+        }
+    }
+}
+
 function comprobar() {
     var inputNombre = document.getElementById('nombre');
     var nuevoNombre = inputNombre.value.trim(); // Obtén el valor del campo y elimina espacios en blanco
