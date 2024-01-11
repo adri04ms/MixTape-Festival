@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="/stylemasinfo.css">
+    <script src="../app.js"></script>
 
 </head>
 
@@ -47,16 +48,17 @@
                 <h2>Nueva cancion</h2>
 
                 <div id="alertaNombre" class="alert alert-danger" style="display: none;" role="alert">
-                    Por favor, completa el nombre.
+                    <strong>Error:</strong> El campo nombre no puede estar vacío.
                 </div>
                 <div id="alertaDuracion" class="alert alert-danger" style="display: none;" role="alert">
-                    Por favor, indica la duración de la canción.
+                    <strong>Error:</strong> El campo duración no puede estar vacío.
                 </div>
-                <div id="alertaLanzamiento" class="alert alert-danger" style="display: none;" role="alert">
-                    Por favor, indica el año de lanzamiento de la canción.
+               <div id="alertaLanzamiento" class="alert alert-danger" style="display: none;" role="alert">
+                    <strong>Error:</strong> El campo año de lanzamiento no puede estar vacío.
                 </div>
+                
                 <form role="form" class="formulario" action="/nuevaCancion/{{artista.id}}" method="post"
-                    onsubmit="return validarFormulario()">
+                    onsubmit="return validarFormularioCancion()">
                     <table class="tabla">
                         <tr>
                             <td><input placeholder="Nombre" type="text" id="nombre" name="nombre" ></td>
@@ -109,32 +111,6 @@
         </div>
     </div>
     <br><br>
-
-    <script>
-        function mostrarAlerta(id) {
-            document.getElementById(id).style.display = 'block';
-            setTimeout(function () {
-                document.getElementById(id).style.display = 'none';
-            }, 4000);
-        }
-
-        function validarFormulario() {
-            var nombre = document.getElementById('nombre').value;
-            var duracion = document.getElementById('duracion').value;
-            var lanzamiento = document.getElementById('lanzamiento').value;
-
-            if (nombre === '' || duracion === '' || lanzamiento === '') {
-                // Muestra las alertas
-                if (nombre === '') mostrarAlerta('alertaNombre');
-                if (duracion === '') mostrarAlerta('alertaDuracion');
-                if (lanzamiento === '') mostrarAlerta('alertaLanzamiento');
-
-                return false;
-            }
-
-            return true; // Envía el formulario si todos los campos están llenos
-        }
-    </script>
 </body>
 
 </html>
