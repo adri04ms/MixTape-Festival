@@ -35,19 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, velocidad);
     }
     escribirTexto(subtitulo, elemento);
-
-    var titulo = document.querySelector("h1");
-
-    function cambiarColor() {
-        if (titulo.style.color === "black") {
-            titulo.style.color = "white";
-        } else {
-            titulo.style.color = "black";
-        }
-    }
-    setInterval(cambiarColor, 300);
-
-    efectoImagen();
 });
 
 function efectoImagen() {
@@ -148,6 +135,27 @@ function esURLValida(url) {
 // Aquí, simplemente verifica si es una URL válida
 var regexURL = /^(ftp|http|https):\/\/[^ "]+$/;
 return regexURL.test(url);
+}
+
+function mostrarAlertaCancion(id) {
+    document.getElementById(id).style.display = 'block';
+    setTimeout(function () {
+        document.getElementById(id).style.display = 'none';
+    }, 4000);
+}
+
+function validarFormularioCancion() {
+    var nombre = document.getElementById('nombre').value;
+    var duracion = document.getElementById('duracion').value;
+    var lanzamiento = document.getElementById('lanzamiento').value;
+    if (nombre === '' || duracion === '' || lanzamiento === '') {
+        // Muestra las alertas
+        if (nombre === '') mostrarAlertaCancion('alertaNombre');
+        if (duracion === '') mostrarAlertaCancion('alertaDuracion');
+        if (lanzamiento === '') mostrarAlertaCancion('alertaLanzamiento');
+        return false;
+    }
+    return true; // Envía el formulario si todos los campos están llenos
 }
 
 function filtrarPorNombre() {
