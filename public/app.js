@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, velocidad);
     }
     escribirTexto(subtitulo, elemento);
+    efectoImagen();
 });
 
 function efectoImagen() {

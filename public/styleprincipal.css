@@ -10,6 +10,27 @@ h3{ /*GENERO*/
     color: white;
 }
 
+.favbtn {
+    background: linear-gradient(90deg, #4B0082, #800080); /* Degradado de morado oscuro a rosa oscuro */
+    color: #fff; /* Texto blanco */
+    padding: 15px 25px;
+    border: none;
+    border-radius: 30px; /* Esquinas más redondas */
+    cursor: pointer;
+    font-size: 22px;
+    font-family: 'fantasy';
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    outline: none; /* Quita el contorno al hacer clic */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar el color de fondo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Sombra suave */
+}
+
+.favbtn:hover {
+    background: linear-gradient(90deg, #800080, #4B0082); /* Cambio de color en hover */
+}
+
+
 body.favoritos-open .cantante img {
     width: 15vw; 
     height: 20vw;
@@ -36,7 +57,7 @@ body.favoritos-open #favoritosSidebar {
     overflow-y: auto; /* Agrega un desplazamiento vertical a la barra lateral si es necesario */
     width: 250px;
     margin-right: 0;
-    transition: margin-right 0.5s ease-in-out;
+    transition: width 0.5s ease-in-out, margin-right 0.5s ease-in-out;
 }
 
 #artist-container {
@@ -62,6 +83,7 @@ body.favoritos-open #artist-container {
 
 .favoritos-open #FavoritosBtn:hover {
     cursor: pointer;
+    transition: color 0.3s ease, font-size 0.3s ease; 
 }
 
 body.favoritos-open .cantante p,
