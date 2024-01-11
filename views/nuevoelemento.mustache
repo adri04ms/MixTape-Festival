@@ -71,7 +71,7 @@
                         <tr>
                             <td><label for="nombre">NOMBRE</label></td>
                             {{#artista.nombre}}
-                            <td><input placeholder=" Introduce el nombre del cantante" type="text" id="nombre" name="nombre" value= {{artista.nombre}}></td>
+                            <td><input placeholder=" Introduce el nombre del cantante" type="text" id="nombre" name="nombre" oninput= "comprobar()" value= {{artista.nombre}}></td>
                             {{/artista.nombre}}
                             {{^artista.nombre}}
                             <td><input placeholder=" Introduce el nombre del cantante" type="text" id="nombre" name="nombre"></td>
