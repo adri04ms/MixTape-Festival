@@ -35,19 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, velocidad);
     }
     escribirTexto(subtitulo, elemento);
-
-    var titulo = document.querySelector("h1");
-
-    function cambiarColor() {
-        if (titulo.style.color === "black") {
-            titulo.style.color = "white";
-        } else {
-            titulo.style.color = "black";
-        }
-    }
-    setInterval(cambiarColor, 300);
-
-    efectoImagen();
 });
 
 function efectoImagen() {
