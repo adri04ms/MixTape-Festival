@@ -18,32 +18,6 @@ async function loadMore() {
     }
 }
 
-
-function search() {
-    var input = document.getElementById('searchInput').value.trim().toLowerCase();
-    var artistas = document.getElementsByClassName('cantante');
-
-    for (var i = 0; i < artistas.length; i++) {
-        var nombre = artistas[i].getElementsByTagName('p')[0].innerText.trim().toLowerCase();
-        var genero = artistas[i].getElementsByTagName('h3')[0].innerText.trim().toLowerCase();
-
-        // Mostrar u ocultar el elemento según si coincide con la búsqueda en nombre o género
-        if (input === '' || nombre.includes(input) || genero.includes(input)) {
-            artistas[i].style.display = 'block';
-        } else {
-            artistas[i].style.display = 'none';
-        }
-    }
-}
-
-function resetSearch() {
-    var artistas = document.getElementsByClassName('cantante');
-
-    for (var i = 0; i < artistas.length; i++) {
-        artistas[i].style.display = 'block';
-    }
-}
-
 document.addEventListener("DOMContentLoaded", function () {
     var subtitulo = "The best festival of your entire life";
     var velocidad = 100;
@@ -170,4 +144,18 @@ function esURLValida(url) {
 // Aquí, simplemente verifica si es una URL válida
 var regexURL = /^(ftp|http|https):\/\/[^ "]+$/;
 return regexURL.test(url);
+}
+
+function comprobar() {
+    var inputNombre = document.getElementById('nombre');
+    var nuevoNombre = inputNombre.value.trim(); // Obtén el valor del campo y elimina espacios en blanco
+
+    // Verifica si el nuevo nombre ya existe en el mapa
+    if (nombresCantantes.has(nuevoNombre)) {
+        alert('Ya hay un cantante con ese nombre. Por favor, elige otro nombre.');
+        // Puedes realizar acciones adicionales, como desactivar el botón de enviar o cambiar estilos
+    } else {
+        // Si el nombre no existe, actualiza el mapa
+        nombresCantantes.set(nuevoNombre, true);
+    }
 }
