@@ -1,11 +1,75 @@
 body{ /*COLOR DE FONFO DE PAGINA*/
     background-color: black; 
+    overflow-y: scroll;
+    transition: margin-right 0.5s ease;
 }
 
 h3{ /*GENERO*/
     font-size: 4vw;
     font-weight: bold;
     color: white;
+}
+
+body.favoritos-open .cantante img {
+    width: 15vw; 
+    height: 20vw;
+}
+
+body.favoritos-open .container-fluid {
+    margin-right: 0;
+    transition: margin-right 0.5s ease-in-out;
+}
+
+body.favoritos-open #favoritosSidebar {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background: rgb(108, 11, 100);
+    background: linear-gradient(90deg, rgba(108, 11, 100, 1) 0%, rgba(81, 10, 84, 1) 46%, rgba(22, 0, 21, 1) 100%);
+    padding: 20px;
+    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center;
+    overflow-y: auto; /* Agrega un desplazamiento vertical a la barra lateral si es necesario */
+    width: 250px;
+    margin-right: 0;
+    transition: margin-right 0.5s ease-in-out;
+}
+
+#artist-container {
+    transition: padding-right 0.5s ease-in-out;
+}
+
+body.favoritos-open #artist-container {
+    padding-right: 250px;
+}
+
+.favoritos-open #FavoritosBtn {
+    margin-right: 0;
+}
+
+.favoritos-open .cantante,
+.favoritos-open .cabecera,
+.favoritos-open .artistas,
+.favoritos-open .mapa,
+.favoritos-open footer {
+    opacity: 0.8; /* Cambia la opacidad de los elementos cuando se abre la barra lateral */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.favoritos-open #FavoritosBtn:hover {
+    cursor: pointer;
+}
+
+body.favoritos-open .cantante p,
+body.favoritos-open .mapa h4,
+body.favoritos-open .mapa p,
+body.favoritos-open footer h5 {
+    font-size: 1.33vw; /* Ajusta el tamaño de fuente según sea necesario */
+    transition: font-size 0.5s ease-in-out;
 }
 
 a { /*PARA QUE NO SE SUBRAYEN LOS ENLACES*/
@@ -275,4 +339,3 @@ body {
     margin-left: 10px;
     cursor: pointer;
 }
-

@@ -92,9 +92,13 @@ function toggleCorazon(button) {
 
 function toggleFavoritesSidebar() {
     const favoritosSidebar = document.getElementById('favoritosSidebar');
+    const body = document.body;
 
     // Toggle the 'hidden' class to show/hide the sidebar
     favoritosSidebar.classList.toggle('hidden');
+
+    // Cambia la clase del cuerpo para ajustar los estilos
+    body.classList.toggle('favoritos-open');
 
     // Change the button text based on the sidebar visibility
     const isOpen = !favoritosSidebar.classList.contains('hidden');
@@ -102,7 +106,7 @@ function toggleFavoritesSidebar() {
 
     // Cambia el texto del botón
     document.getElementById('FavoritosBtn').innerText = buttonText;
-    
+
     // Muestra u oculta la barra lateral
     favoritosSidebar.style.display = isOpen ? 'block' : 'none';
 }
