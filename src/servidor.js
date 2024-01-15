@@ -252,7 +252,7 @@ export function loadSampleData(){
     
     });
 
-     /*addArtista({
+     addArtista({
         nombre: 'BAD BUNNY',
         imagen: 'https://rec-end.elnuevodia.com/images/tn/0/10/892/1200/473/618/2019/01/23/721a274eb5cb4f078abc21094c72cb95.jpg',
         genero: 'TRAP LATINO', 
@@ -298,7 +298,7 @@ export function loadSampleData(){
         }
         ] 
     
-    });*/
+    });
 
 
 }

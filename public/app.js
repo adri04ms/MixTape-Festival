@@ -155,10 +155,11 @@ return true; // Envía el formulario si todas las validaciones son exitosas
 }
 
 function esURLValida(url) {
-// Esta función puede ser más compleja dependiendo de los requisitos específicos
-// Aquí, simplemente verifica si es una URL válida
-var regexURL = /^(ftp|http|https):\/\/[^ "]+$/;
-return regexURL.test(url);
+  // Expresión regular para validar una URL
+  const regexURL = /^(ftp|http|https):\/\/[^ "]+$/;
+
+  // Verificar si la URL cumple con la expresión regular
+  return regexURL.test(url);
 }
 
 function mostrarAlertaCancion(id) {
