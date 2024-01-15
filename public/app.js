@@ -201,16 +201,3 @@ function filtrarPorNombre() {
     }
 }
 
-function comprobar() {
-    var inputNombre = document.getElementById('nombre');
-    var nuevoNombre = inputNombre.value.trim(); // Obtén el valor del campo y elimina espacios en blanco
-
-    // Verifica si el nuevo nombre ya existe en el mapa
-    if (nombresCantantes.has(nuevoNombre)) {
-        alert('Ya hay un cantante con ese nombre. Por favor, elige otro nombre.');
-        // Puedes realizar acciones adicionales, como desactivar el botón de enviar o cambiar estilos
-    } else {
-        // Si el nombre no existe, actualiza el mapa
-        nombresCantantes.set(nuevoNombre, true);
-    }
-}

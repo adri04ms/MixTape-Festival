@@ -5,7 +5,63 @@
     </a>
     <a href="/masInfo/{{id}}"><img src="{{imagen}}" alt="{{nombre}}"></a>
     <div class="generoyfav">
-        <h3>{{genero}}</h3>
+            {{#genero.POP_ESPANYOL}}
+                                    <h3>POP ESPAÑOL</h3>
+                                    {{/genero.POP_ESPANYOL}}
+                                    {{^genero.POP_ESPANYOL}}
+                                    {{#genero.POP}}
+                                    <h3>POP</h3>
+                                    {{/genero.POP}}
+                                    {{^genero.POP}}
+                                    {{#genero.REGGUETON}}
+                                    <h3>REGGUETON</h3>
+                                    {{/genero.REGGUETON}}
+                                    {{^genero.REGGUETON}}
+                                    {{#genero.RAP}}
+                                    <h3>RAP</h3>
+                                    {{/genero.RAP}}
+                                    {{^genero.RAP}}
+                                    {{#genero.ROCK}}
+                                    <h3>ROCK</h3>
+                                    {{/genero.ROCK}}
+                                    {{^artista.genero.ROCK}}
+                                    {{#artista.genero.INDIE}}
+                                    <h3>INDIE</h3>
+                                    {{/artista.genero.INDIE}}
+                                    {{^artista.genero.INDIE}}
+                                    {{#artista.genero.ALTERNATIVO}}
+                                    <h3>ALTERNATIVO</h3>
+                                    {{/artista.genero.ALTERNATIVO}}
+                                    {{^artista.genero.ALTERNATIVO}}
+                                    {{#artista.genero.HIP_HOP}}
+                                    <h3>HIP HOP</h3>
+                                    {{/artista.genero.HIP_HOP}}
+                                    {{^artista.genero.HIP_HOP}}
+                                    {{#artista.genero.METAL}}
+                                    <h3>METAL</h3>
+                                    {{/artista.genero.METAL}}
+                                    {{^artista.genero.METAL}}
+                                    {{#artista.genero.JAZZ}}
+                                    <h3>JAZZ</h3>
+                                    {{/artista.genero.JAZZ}}
+                                    {{^artista.genero.JAZZ}}
+                                    {{#artista.genero.TRAP_LATINO}}
+                                    <h3>RAP</h3>TRAP LATINO
+                                    {{/artista.genero.TRAP_LATINO}}
+                                    {{^artista.genero.TRAP_LATINO}}
+                                    <h3>{{genero}}</h3>
+                                    {{/artista.genero.TRAP_LATINO}}
+                                    {{/artista.genero.JAZZ}}
+                                    {{/artista.genero.METAL}}
+                                    {{/artista.genero.HIP_HOP}}
+                                    {{/artista.genero.ALTERNATIVO}}
+                                    {{/artista.genero.INDIE}}
+                                    {{/artista.genero.ROCK}}
+                                    {{/genero.RAP}}
+                                    {{/genero.REGGUETON}}
+                                    {{/genero.POP}}
+                                    {{/genero.POP_ESPANYOL}}
+                                    
         <button class="btn btn-corazon {{#esFavorito}}active{{/esFavorito}}" onclick="toggleCorazon(this)" data-id="{{id}}">&#x2665;</button>
     </div>
 </div>
