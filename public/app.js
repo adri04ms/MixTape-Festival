@@ -13,7 +13,6 @@ async function loadMore() {
         const artistContainer = document.getElementById("artist-container");
         artistContainer.innerHTML += newArtists;
 
-        // Restore the state of heart buttons for existing favorites
         renderFavorites();
         
         loadMoreRequests++;
@@ -46,18 +45,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function renderFavorites() {
     const favoritosLista = document.getElementById('favoritos-lista');
-    favoritosLista.innerHTML = ''; // Clear existing content
+    favoritosLista.innerHTML = ''; 
 
     const artistContainer = document.getElementById("artist-container");
 
     favorites.forEach((favorite) => {
         const cantanteDiv = artistContainer.querySelector(`[data-id="${favorite.id}"]`);
         if (cantanteDiv) {
-            // Set the 'active' class for the heart button
+    
             const heartButton = cantanteDiv.querySelector('.btn-corazon');
             heartButton.classList.add('active');
-
-            // Append the favorite to the favorites list
+            
             const nuevoFavorito = document.createElement('li');
             nuevoFavorito.textContent = favorite.nombre;
             nuevoFavorito.setAttribute('data-id', favorite.id);
@@ -76,7 +74,6 @@ function efectoImagen() {
             event.target.style.transform = 'scale(1.1)';
         }
     });
-
     contenedor.addEventListener('mouseout', function (event) {
         if (event.target.tagName === 'IMG') {
             event.target.style.transform = 'scale(1)';
@@ -105,20 +102,15 @@ function toggleFavoritesSidebar() {
     const favoritosSidebar = document.getElementById('favoritosSidebar');
     const body = document.body;
 
-    // Toggle the 'hidden' class to show/hide the sidebar
     favoritosSidebar.classList.toggle('hidden');
 
-    // Cambia la clase del cuerpo para ajustar los estilos
     body.classList.toggle('favoritos-open');
 
-    // Change the button text based on the sidebar visibility
     const isOpen = !favoritosSidebar.classList.contains('hidden');
     const buttonText = isOpen ? 'Ocultar Artistas Favoritos' : 'Mostrar Artistas Favoritos';
 
-    // Cambia el texto del botón
     document.getElementById('FavoritosBtn').innerText = buttonText;
 
-    // Muestra u oculta la barra lateral
     favoritosSidebar.style.display = isOpen ? 'block' : 'none';
 }
 
@@ -137,8 +129,6 @@ var genero = document.getElementById('genero').value;
 var fecha = document.getElementById('fecha').value;
 var hora = document.getElementById('hora').value;
 var descripcion = document.getElementById('descripcion').value;
-
-// Validaciones adicionales
 var regexLetraMayuscula = /^[A-Z]/;
 
 if (nombre === '' || !regexLetraMayuscula.test(nombre) || !esURLValida(imagen) || imagen === '' || genero === '' || fecha === '' || hora === '' || descripcion === '' || descripcion.length < 50 || descripcion.length > 500) {
@@ -155,10 +145,9 @@ return true; // Envía el formulario si todas las validaciones son exitosas
 }
 
 function esURLValida(url) {
-  // Expresión regular para validar una URL
+  // Valida la URL
   const regexURL = /^(ftp|http|https):\/\/[^ "]+$/;
-
-  // Verificar si la URL cumple con la expresión regular
+    
   return regexURL.test(url);
 }
 
@@ -180,18 +169,16 @@ function validarFormularioCancion() {
         if (lanzamiento === '') mostrarAlertaCancion('alertaLanzamiento');
         return false;
     }
-    return true; // Envía el formulario si todos los campos están llenos
+    return true; 
 }
 
 function filtrarPorNombre() {
-    // Obtener el valor ingresado por el usuario
+
     var filtro = document.getElementById('busqueda').value.toLowerCase();
     
-    // Obtener la lista de elementos en el mapa
     var contenedorArtistas = document.getElementById('artist-container');
     var artistas = contenedorArtistas.getElementsByClassName('cantante');
 
-    // Iterar sobre los elementos y mostrar/ocultar según el filtro
     for (var i = 0; i < artistas.length; i++) {
         var nombre = artistas[i].getElementsByTagName('p')[0].innerText.toLowerCase();
         if (nombre.includes(filtro)) {
