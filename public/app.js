@@ -1,5 +1,6 @@
 const NUM_RESULTS = 4;
 let loadMoreRequests = 0;
+let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
 async function loadMore() {
     const from = (loadMoreRequests + 1) * NUM_RESULTS;
@@ -12,11 +13,15 @@ async function loadMore() {
         const artistContainer = document.getElementById("artist-container");
         artistContainer.innerHTML += newArtists;
 
+        // Restore the state of heart buttons for existing favorites
+        renderFavorites();
+        
         loadMoreRequests++;
     } catch (error) {
         console.error('Error al cargar artistas:', error);
     }
 }
+
 
 document.addEventListener("DOMContentLoaded", function () {
     var subtitulo = "The best festival of your entire life";
@@ -36,7 +41,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     escribirTexto(subtitulo, elemento);
     efectoImagen();
+    renderFavorites();
 });
+
+function renderFavorites() {
+    const favoritosLista = document.getElementById('favoritos-lista');
+    favoritosLista.innerHTML = ''; // Clear existing content
+
+    const artistContainer = document.getElementById("artist-container");
+
+    favorites.forEach((favorite) => {
+        const cantanteDiv = artistContainer.querySelector(`[data-id="${favorite.id}"]`);
+        if (cantanteDiv) {
+            // Set the 'active' class for the heart button
+            const heartButton = cantanteDiv.querySelector('.btn-corazon');
+            heartButton.classList.add('active');
+
+            // Append the favorite to the favorites list
+            const nuevoFavorito = document.createElement('li');
+            nuevoFavorito.textContent = favorite.nombre;
+            nuevoFavorito.setAttribute('data-id', favorite.id);
+            favoritosLista.appendChild(nuevoFavorito);
+        }
+    });
+}
+
+
 
 function efectoImagen() {
     var contenedor = document.querySelector('#artist-container');
@@ -57,25 +87,18 @@ function efectoImagen() {
 function toggleCorazon(button) {
     const cantanteDiv = button.closest('.cantante');
     const cantanteId = cantanteDiv.getAttribute('data-id');
-    const favoritosLista = document.getElementById('favoritos-lista');
     const cantanteNombre = cantanteDiv.querySelector('p').textContent;
 
-    // Verifica si el botón tiene la clase 'active'
     const esFavorito = button.classList.toggle('active');
 
-    // Encuentra el elemento existente en la lista de favoritos
-    const favoritoItem = document.querySelector(`#favoritos-lista li[data-id="${cantanteId}"]`);
-
-    if (esFavorito && !favoritoItem) {
-        // Añade el cantante a la lista de favoritos
-        const nuevoFavorito = document.createElement('li');
-        nuevoFavorito.textContent = cantanteNombre;
-        nuevoFavorito.setAttribute('data-id', cantanteId);
-        favoritosLista.appendChild(nuevoFavorito);
-    } else if (!esFavorito && favoritoItem) {
-        // Elimina el cantante de la lista de favoritos
-        favoritosLista.removeChild(favoritoItem);
+    if (esFavorito) {
+        favorites.push({ id: cantanteId, nombre: cantanteNombre });
+    } else {
+        favorites = favorites.filter((favorite) => favorite.id !== cantanteId);
     }
+
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    renderFavorites();
 }
 
 function toggleFavoritesSidebar() {
