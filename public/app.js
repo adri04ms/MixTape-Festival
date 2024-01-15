@@ -1,6 +1,8 @@
+localStorage.clear();
 const NUM_RESULTS = 4;
 let loadMoreRequests = 0;
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
 
 async function loadMore() {
     const from = (loadMoreRequests + 1) * NUM_RESULTS;
